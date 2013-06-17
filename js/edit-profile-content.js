@@ -476,7 +476,6 @@ $(document).ready(function(e){
 
 	// Click handler for btn-ep-save-changes
 	$("#btn-ep-save-changes").click(function(e){
-		
 		if(baseValuesChanged == true)
 		{
 			$.ajax({
