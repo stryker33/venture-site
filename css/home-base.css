@@ -1,0 +1,272 @@
+#banner-container
+{
+	position: absolute;
+	width: 100%;
+	height: 5.5%;
+	top: 0%;
+	left: 0%;
+	background-color: #1E90FF;
+	display: block;
+	box-shadow: 0px 0px 5px #000000;
+}
+
+#navbar-container
+{
+	position: absolute;
+	width: 15%;
+	height: 94.5%;
+	bottom: 0%;
+	right: 0%;
+	background-color: #333333;
+	display: block;
+	box-shadow: 0px 0px 2.5px #000000;
+}
+
+#content-container-wrapper
+{
+	position: absolute;
+	width: 85%;
+	height: 94.5%;
+	top: 5.5%;
+	left: 0%;
+}
+
+.content-container, .content-container-active
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	display: none;
+	overflow: auto;
+}
+
+.content-container-active{display: block;}
+#logo-container
+{
+	position: absolute;
+	width: 15%;
+	height: 100%;
+	color: #FFFFFF;
+	font-size: 33.5px;
+	font-weight: 700;
+	top: 25%;
+	right: 0%;
+	text-align: center;
+}
+
+#content-desc-header
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 33%;
+	left: 8%;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+#search-box-container
+{
+	position: absolute;
+	width: 45%;
+	height: 48%;
+	top: 22.5%;
+	left: 20%;
+	background-color: #FFFFFF;
+	padding-top: 1.5px;
+}
+
+#user-info-container
+{
+	position: absolute;
+	width: 13%;
+	height: 100%;
+	right: 15%;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+
+#user-profile-image-container
+{
+	position: absolute;
+	width: 25%;
+	height: 80%;
+	top: 10%;
+	border: solid 1px #000000;
+}
+
+#username{position: absolute; top: 28%; right: 0%;}
+#user-profile-image{position: absolute; width: 100%; height: 100%;}
+
+#logo-container:hover, #content-desc-header:hover, #user-info-container:hover{cursor: pointer;}
+#nav-container
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+}
+
+.access-controls-container
+{
+	position: absolute;
+	width: 100%;
+	height: 3%;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+}
+
+#back-control-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	left: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+#main-menu-control-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	right: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+#sub-menu-header
+{
+	position: absolute;
+	width: auto;
+	height: 100%;
+	left: 40%;
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+#back-control-container:hover, #main-menu-control-container:hover{cursor: pointer; background-color: #000000;}
+#sub-menu-header:hover{cursor: pointer;}
+
+.nav-menu-container-active, .nav-menu-container
+{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 3%;
+}
+
+.nav-menu-container{display: none;}
+.nav-menu
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: #E6E6E6;
+	font-size: 13px;
+	font-weight: 500;
+	text-align: left;
+	padding-top: 3%;
+}
+
+.nav-menu-element
+{
+	padding-left: 33%;
+	padding-top: 1.8%;
+	padding-bottom: 1.8%;
+}
+
+.nav-menu-element:hover
+{
+	cursor: pointer;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+.nav-menu-element-active
+{
+	padding-left: 33%;
+	padding-top: 1.8%;
+	padding-bottom: 1.8%;
+	color: #FFFFFF;
+	background-color: #1E90FF;
+	font-weight: 700;
+}
+
+.sub-menu .nav-menu .nav-menu-element-active, .sub-menu .nav-menu .nav-menu-element
+{
+	padding-left: 0%;
+	text-align: center;
+} 
+
+.nav-menu-element-active:hover{cursor: pointer;}
+
+.notification-count
+{
+	position: absolute;
+	width: 9%;
+	height: auto;
+	left: 5%;
+	font-size: 11px;
+	font-weight: 700;
+	text-align: center;
+	color: #000000;
+	background-color: #1E90FF;
+	border-radius: 3px;
+	margin-top: 0.3%;
+	padding: 0px;
+}
+
+.filters-container
+{
+	position: relative;
+	width: 100%;
+	height: 4%;
+	top: 0%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+.search-container
+{
+	position: absolute;
+	width: 15%;
+	height: 58%;
+	top: 20%;
+	right: 5%;
+	border-radius: 0px !important;
+	border: solid 1px #000000;
+}
+
+.search-container .textbox-container, .search-container .textbox
+{
+	position: absolute;
+	width: 90%;
+	height: 92%;
+	left: 0%;
+	font-size: 10.5px !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.search-container .search-icon-container
+{
+	position: absolute;
+	width: 10%;
+	height: 100%;
+	right: 0%;
+}
+
+.search-container .search-icon-container i
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

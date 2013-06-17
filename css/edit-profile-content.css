@@ -1,0 +1,163 @@
+#ep-image-container
+{
+	position: absolute;
+	width: 18%;
+	height: 28%;
+	top: 4%;
+	right: 5.8%;
+	border: solid 1px #000000;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	background-color: #000000;
+	box-shadow: 0px 0px 3px #000000;
+}
+
+#ep-change-image-container
+{
+	position: absolute;
+	width: 100%;
+	height: 14%;
+	bottom: 0%;
+	left: 0%;
+	font-size: 11px;
+	font-weight: 700;
+	text-align: center;
+	line-height: 30px;
+	color: #FFFFFF;
+	background-color: #000000;
+	opacity: 0.7;
+}
+
+#ep-change-image-container span{display: inline-block; vertical-align: middle;}
+#ep-change-image-container:hover{cursor: pointer;}
+#ep-personal-info-container, #ep-edu-info-container, #ep-work-info-container
+{
+	position: relative;
+	height: auto;
+	left: 5%;
+	//border: solid 1px #000000;
+	font-weight: 700;
+	margin-top: 3%;
+}
+
+#edit-profile-content td{white-space: nowrap;}
+#edit-profile-content td:first-child, #edit-profile-content td:nth-child(3){height: auto; text-align: right; }
+#edit-profile-content td:last-child, #edit-profile-content td:nth-child(2){width: 280px; height: auto; font-size: 10px !important; font-weight: 500; text-align: left;}
+#edit-profile-content td:last-child:hover, #edit-profile-content td:nth-child(2):hover{cursor: pointer;}
+#edit-profile-content td:last-child .ep-field-name, #edit-profile-content td:nth-child(2) .ep-field-name {padding: 0% 5%;}
+#ep-personal-info-container{width: 50%;}
+
+.ep-info-header
+{
+	position: relative;
+	width: auto;
+	height: auto;
+	font-size: 14px;
+	padding: 1% 3% 1% 3%;
+}
+
+.ep-field-name
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	float: left;
+	font-size: 12px;
+	padding: 5%;
+}
+
+#ep-edu-info-container{width: 50%;}
+
+.ep-desc-info-container
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	left: 0%;
+	margin: 1% 0%;
+}
+
+.ep-desc-info-container table tr .ep-field-name{padding: 0% 5%;}
+
+#ep-work-info-container{width: 50%;}
+
+#ep-contact-info-container
+{
+	position: absolute;
+	width: 30%;
+	height: 11%;
+	top: 39.5%;
+	right: 5.8%;
+	font-weight: 700;
+	//border: solid 1px #000000;
+}
+
+.ep-edit-input-container
+{
+	position: relative;
+	width: 90%;
+	height: auto;
+	float: right;
+}
+
+.ep-edit-input-container input, .ep-edit-input-container select
+{
+	position: relative;
+	width: 90% !important;
+	height: 100%;
+	box-shadow: none;
+}
+
+.ep-edit-input-container select
+{
+	margin: 0px;
+	font-size: 11px !important;
+	font-weight: 500;
+	font-family: 'Ubuntu', sans-serif !important;
+	text-align: center;
+	border: none;
+}
+.ep-edit-input-container button
+{
+	position: absolute;
+	width: 10%;
+	height: 100%;
+	right: 0%;
+	border-radius: 0px 5px 5px 0px;
+}
+
+#ep-email-id-error
+{
+	position: absolute;
+	width: 25.5%;
+	height: auto;
+	right: 5.8%;
+	top: 52.5%;
+	font-size: 11px;
+	font-weight: 700;
+	display: none;
+}
+
+#btn-ep-save-changes
+{
+	position: absolute;
+	width: 10%;
+	height: auto;
+	top: 59%;
+	right: 5.8%;
+}
+
+.btn-ep-add-info
+{
+	position: absolute;
+	top: 5px;
+	right: 5%;
+}
+
+.btn-ep-remove-info
+{
+	position: absolute;
+	top: 3%;
+	right: 5%;
+}

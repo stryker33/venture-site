@@ -1,0 +1,614 @@
+.wrapper 
+{
+	background-color: #333333;
+}
+
+#banner-container 
+{
+	position: absolute;
+	width: 98%;
+	height: 30%;
+	top: 35%;
+	left: 1%;
+	border: solid 1px #000000;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color: #1E90FF;
+	display: none;
+}
+
+#banner-text-container 
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 15%;
+	right: 3%;
+}
+
+.banner-text 
+{
+	width: auto;
+	height: auto;
+	color: #FFFFFF;
+}
+
+#welcome-text 
+{
+	position: relative;
+	top: 8%;
+	left: 0%;
+	font-size: 28px;
+	font-weight: 500;
+}
+
+#logo 
+{
+	position: relative;
+	top: 28%;
+	right: 0%;
+	font-size: 80px;
+	font-weight: bold;
+}
+
+#tagline-text 
+{
+	position: relative;
+	top: 82%;
+	right: 0%;
+	font-size: 14px;
+	font-weight: 500;
+	float: right;
+}
+
+#action-bar-container 
+{
+	position: absolute;
+	width: 98%;
+	height: 10%;
+	top: 33%;
+	left: 1%;
+	display: none;
+}
+
+#action-register-container, #action-login-container
+{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0%;
+}
+
+.action-container{color: #FFFFFF;}
+.action-container:hover{color: #1E90FF; cursor: pointer;}
+#action-register-container{left: 0%;}
+#action-login-container{left: 50%;}
+
+.action-text-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 15%;
+	left: 40%;
+}
+
+.action-text{font-size: 25px; font-weight: 500;}
+.action-desc{font-size: 14px; font-weight: 300;}
+
+/***************************************************************************************/
+/*
+ * 
+ * Login Section
+ * 
+ */
+/***************************************************************************************/
+
+#login-section
+{
+	position: absolute;
+	width: 99.9%;
+	height: 78.8%;
+	top: 21%;
+	left: 0%;
+	display: none;
+}
+
+#login-container
+{
+	position: absolute;
+	width: 40%;
+	height: 35%;
+	top: 18%;
+	left: 30%;
+	border: solid 1px #000000;
+}
+
+#login-container-header
+{
+	position: absolute;
+	width: 100%;
+	height: 14%;
+	top: 0%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+#login-container-header-text
+{
+	position: relative;
+	width: auto;
+	height: auto;
+	float: right;
+	top: 15%;
+	right: 3%;
+}
+
+#login-container-content
+{
+	position: absolute;
+	width: 100%;
+	height: 86%;
+	top: 14%;
+	left: 0%;
+}
+
+#login-emailid-container, #login-password-container
+{
+	position: absolute;
+	width: 40%;
+	height: auto;
+	left: 30%;
+}
+
+#login-emailid-container{top: 20%;}
+#login-password-container{top: 38%;}
+#login-emailid, #login-password{width: 99%;}
+#link-forgot-password
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 55%;
+	left: 30%;
+}
+#btn-login
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 55%;
+	right: 30%;
+}
+
+#login-error
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 75%;
+	left: 30%;
+}
+#link-create-account
+{
+	position: absolute;
+	bottom: 3%;
+	right: 3%;
+	font-size: 12px; 
+}
+
+/***************************************************************************************/
+/*
+ * 
+ * Register Section
+ * 
+ */
+/***************************************************************************************/
+
+#register-section
+{
+	position: absolute;
+	width: 99.9%;
+	height: 78.8%;
+	top: 21%;
+	left: 0%;
+	display: none;
+}
+
+#get-started-container
+{
+	position: absolute;
+	width: 40%;
+	height: 65%;
+	top: 10%;
+	left: 30%;
+	border: solid 1px #000000;
+}
+
+#get-started-container-header
+{
+	position: absolute;
+	width: 100%;
+	height: 9%;
+	top: 0%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+#get-started-container-header-text
+{
+	position: relative;
+	width: auto;
+	height: auto;
+	float: right;
+	top: 18%;
+	right: 3%;
+}
+
+/*
+ * 
+ * Account Details
+ * 
+ */
+
+#account-details-container-content
+{
+	position: absolute;
+	width: 100%;
+	height: 91%;
+	top: 9%;
+	left: 0%;
+}
+#first-name-container, #last-name-container
+{
+	position: absolute;
+	width: 24%;
+	height: auto;
+}
+
+#dob-container, #emailid-container, #confirm-emailid-container, #password-container, #confirm-password-container
+{
+	position: absolute;
+	width: 50%;
+	height: auto;
+	right: 10%;
+}
+
+#name-error, #dob-error, #gender-error, #emailid-error, #emailid-confirm-error, #password-error, #password-confirm-error
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	left: 5%;
+}
+
+#first-name-container{top: 10%; right: 36%;}
+#last-name-container{top: 10%; right: 10%}
+#name-error{top: 10%;}
+
+#dob-container{top: 20%;}
+#dob-error{top: 20%;}
+#gender-container
+{
+	position: absolute;
+	width: 50%;
+	height: 4.5%;
+	top: 30%;
+	right: 10%;	
+}
+
+#gender-male-container, #gender-female-container
+{
+	position: absolute;
+	width: auto;
+	height: 100%;
+	top: 0%;
+}
+
+#gender-male-container{left: 27%;}
+#gender-female-container{left: 50%;}
+#gender-error{top: 30%;}
+
+#male, #female
+{
+	position: relative;
+	top: 0%;
+	float: left;
+}
+
+.radio-button-value-container{position: relative; top: 14%; float: right;}
+#emailid-container, #emailid-error{top: 40%;}
+#confirm-emailid-container, #emailid-confirm-error{top: 50%;}
+#password-container, #password-error{top: 60%;}
+#confirm-password-container, #password-confirm-error{top: 70%;}
+
+#btn-account-details-next
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 85%;
+	right: 10%;
+}
+
+#link-login
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	bottom: 3%;
+	right: 3%;
+}
+
+/*
+ * 
+ * Personal Description
+ * 
+ */
+
+#personal-desc-container-content
+{
+	position: absolute;
+	width: 100%;
+	height: 91%;
+	top: 9%;
+	left: 0%;	
+	display: none;
+}
+
+#preview-image-container
+{
+	position: absolute;
+	width: 30%;
+	height: 55%;
+	top: 20%;
+	left: 10%;
+	border: solid 1px #000000;
+}
+
+#preview-image
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+}
+
+#upload-prompt
+{
+	position: absolute;
+	width: 100%;
+	height: 0%;
+	bottom: 0%;
+	right: 0%;
+	background-color: #000000;
+	opacity: 0.7;
+}
+
+#upload-prompt-text
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 18%;
+	left: 22%;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: 500;
+}
+
+#upload-prompt:hover{cursor: pointer;}
+
+#current-home-container, #hometown-container
+{
+	position: absolute;
+	width: 40%;
+	height: auto;
+	left: 50%;
+}
+
+#current-home-container{top: 35%;}
+#hometown-container{top: 45%;}
+
+#personal-desc-error
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 58%;
+	left: 50%;
+}
+
+#btn-personal-desc-next
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	bottom: 24%;
+	right: 10%;
+}
+
+/*
+ * 
+ * Connection Details
+ * 
+ */
+
+#conn-details-container-content
+{
+	position: absolute;
+	width: 100%;
+	height: 93%;
+	top: 7%;
+	left: 0%;
+	display: none;
+}
+
+#education-header, #work-header
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	left: 3%;
+	color: #000000;
+	font-size: 13px;
+	font-weight: 900;
+}
+
+#education-header{top: 1.5%;}
+#btn-add-edu-desc
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 1.5%;
+	right: 5.5%;
+}
+
+.edu-desc-container
+{
+	position: relative;
+	width: 100%;
+	height: 7%;
+	top: 6.5%;
+	padding-top: 1%;
+}
+
+.institute-name-container{position: absolute; height: auto; width: 40%; left: 3%;}
+.institute-name-container, .inst-from-container, .inst-to-container{top: 15%;}
+
+.inst-from-container, .inst-to-container{position: absolute; width: 21.5%; height: auto;}
+.inst-from-container{left: 50%;}
+.inst-to-container{left: 73%;}
+
+.btn-remove-edu-desc
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 65%;
+	right: 5.5%;
+}
+.calendar-hidden table.ui-datepicker-calendar{display: none !important;}
+
+#work-header{top: 47%;}
+#btn-add-work-desc
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 47%;
+	right: 5.5%;
+}
+
+.work-desc-container
+{
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	top: 50%;
+	left: 0%;
+	padding-top: 5%;
+}
+
+
+.designation-container, .workplace-container{position: absolute; height: auto; width: 40%; left: 3%;}
+.designation-container, .work-from-container, .work-to-container{top: 10%;}
+.workplace-container{top: 50%;}
+
+.work-from-container, .work-to-container{position: absolute; width: 21.5%; height: auto;}
+.work-from-container{left: 50%;}
+.work-to-container{left: 73%;}
+.btn-remove-work-desc
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 50%;
+	right: 5.5%;
+}
+
+#btn-next-conn-details
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	bottom: 5%;
+	right: 5%;
+}
+
+/*
+ * 
+ * Confirmation
+ * 
+ */
+
+#conf-container-content
+{
+	position: absolute;
+	width: 100%;
+	height: 91%;
+	top: 9%;
+	left: 0%;
+	display: none;
+}
+
+
+#email-conf-text-1, #email-conf-text-2
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	left: 10%;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+#email-conf-text-1{top: 10%;}
+#email-conf-text-2{top: 18%;}
+
+#passcode-container
+{
+	position: absolute;
+	width: 25%;
+	height: auto;
+	top: 30%;
+	left: 10%;
+}
+
+#passcode-error
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 30%;
+	left: 40%;
+}
+
+#captcha-container
+{
+	position: absolute;
+	width: 40%;
+	height: 30%;
+	top: 42%;
+	left: 10%;
+}
+#btn-submit-captcha
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 75%;
+	left: 10%;
+	display: none;
+}
+#btn-finish
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	bottom: 5%;
+	right: 7%;
+}
