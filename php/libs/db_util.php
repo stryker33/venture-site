@@ -227,4 +227,40 @@
 
 		return $finalSearchDomain;
 	}
+
+	// Returns the Connection Groups corresponding to a User
+	function getConnectionGroups($uid)
+	{
+		$memcached = initMemcached();
+
+		$cache_result = $memcached->get(md5("connection-groups-uid-".$uid));
+		if($cache_result)
+			return $cache_result;
+		else 
+			return updateConnectionGroups($uid);
+	}
+
+
+	// Updates the connection groups associated with a User
+	function updateConnectionGroups($uid)
+	{
+		$conn = connect("127.0.0.1", "5000", "root", "");
+		$memcached = initMemcached();
+
+		$connectionGroupCount = 0;
+		$connectionGroups = array();
+		$connectionGroups["uid"] = $uid;
+
+		$query = "Select cg_name, cg_members from connection_groups where uid=$uid";
+		$result = mysqli_query($conn, $query) or die("Query Execution Failed: ".mysqli_error($conn));
+		while($row = mysqli_fetch_array($result, MYSQL_ASSOC))
+		{
+			$connectionGroups["groups"][$connectionGroupCount]["group_name"] = $row["cg_name"];
+			$connectionGroups["groups"][$connectionGroupCount++]["group_members"] = json_decode($row["cg_members"]); 
+		}
+
+		$memcached->set(md5("connection-groups-uid-".$uid), $connectionGroups, 300);
+
+		return $connectionGroups;
+	}
 ?>

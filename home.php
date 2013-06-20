@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="/assets/js/jquery.tools.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/jquery.ui.datepicker.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="/assets/js/jquery.ajaxq-0.0.1.js" ></script>
 		<script src="/assets/js/autobahn.min.js"></script>
 		<script type="text/javascript" src="/assets/js/jquery.fileupload.js"  ></script>
 

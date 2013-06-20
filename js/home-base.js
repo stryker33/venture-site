@@ -1,4 +1,4 @@
-var uid, contentRequest, userInfo, notifications, connections, connection_requests;
+var uid, contentRequest, userInfo, notifications, connections, connection_requests, connectionGroups;
 $(document).ready(function(e){
 	uid = $("#get-uid").val();
 	contentRequest = $("#get-content").val();
@@ -54,7 +54,8 @@ function populatePage()
 	webSocketServerConnect(); //ws_message_handler.js
 	loadUserInfo();
 	loadNotifications();
-	loadConnections(); 
+	loadConnections();
+	loadConnectionGroups();
 }
 
 // Switch to the requested content
@@ -83,10 +84,10 @@ function switchContent()
 // Retrieves and loads the userInfo into the profile section
 function loadUserInfo()
 {
-	var userInfoRequest = $.ajax({
+	var userInfoRequest = $.ajaxq("loadQueue", {
 		url: "/php/userInfo.php",
 		type: "GET",
-		async: false,
+		//async: false,
 		data: {uid: uid},
 		dataType: "json",
 		success: function(data){
@@ -106,10 +107,10 @@ function loadUserInfo()
 // Retrieves and loads the notifications
 function loadNotifications()
 {
-	var notificationsRequest = $.ajax({
+	var notificationsRequest = $.ajaxq("loadQueue", {
 		url: "/php/getNotifications.php",
 		type: "GET",
-		async: false,
+		//async: false,
 		data: {uid: uid, all: 1},
 		dataType: "json",
 		success: function(data){
@@ -131,19 +132,35 @@ function loadNotifications()
 // Retrieves and loads the connection_requests
 function loadConnections()
 {
-	var connectionsRequest = $.ajax({
+	var connectionsRequest = $.ajaxq("loadQueue", {
 		url: "/php/getConnections.php",
 		type: "GET",
-		async: false,
+		//async: false,
 		data: {uid: uid},
 		dataType: "json",
 		success: function(data){
 			//connections = jQuery.parseJSON(data);
 			connections = data;
 			loadConnectionsInfo(); // connections-content.js
+			populateNewCGContainer(); // connection-groups-content.js
 		},
 			error: function(jqXHR, textStatus, errorThrown){
 			console.log("Error(getConnections):: jqXHR: " + jqXHR.statusText + " " + jqXHR.responseText + " textStatus: " + textStatus + " errorThrown: " + errorThrown);
+		}
+	});
+}
+
+// Retrieves and loads the connection_groups
+function loadConnectionGroups()
+{
+	var cgRequest = $.ajaxq("loadQueue", {
+		url: "/php/getCG.php",
+		type: "GET",
+		data: {uid: uid},
+		datatype: "json",
+		success: function(data){
+			connectionGroups = data;
+			loadCGInfo(); // connection-groups-content.js
 		}
 	});
 }

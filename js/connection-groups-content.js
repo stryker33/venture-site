@@ -3,9 +3,6 @@ var newConnectionGroup;
 $(document).ready(function(e){
 	// Init the new-cg-container overlay
 	$("#btn-cg-create-new-cg").overlay({fixed: false});
-
-	populateNewCGContainer();
-
 	$("#btn-cg-create-new-cg").on("click", function(e){
 		populateNewCGContainer(); 
 		newConnectionGroup = {}; 
@@ -36,7 +33,7 @@ $(document).ready(function(e){
 				$(connection).show();
 		});
 	});
-
+	
 	$(document).on("click", ".btn-cg-new-connection-action", function(e){
 		var clickedElement = $(this);
 		var clickedElementUID = parseInt($(this).parent().attr("uid"));
@@ -89,15 +86,30 @@ $(document).ready(function(e){
 				{
 					$("#btn-cg-create-group").css("width", "auto").addClass("btn-success");
 					$("#btn-cg-create-group").text("Connection Group Created");
-					setTimeout(appendCG, 1000);
+					setTimeout(appendCG, 1000, newConnectionGroup, true);
+					setTimeout(loadCGInfo, 5000);
 				}
 			}
 		});
 	});
 });
 
-function populateNewCGContainer()
+
+function loadCGInfo()
 {
+	$.each($("connection-group-container").get(), function(index, value){
+		$(value),remove();
+	});
+
+	var cg = jQuery.parseJSON(connectionGroups)
+	$.each(cg.groups, function(index, connectionGroup){
+		appendCG(connectionGroup, false);
+	});
+}
+
+function populateNewCGContainer()
+{	
+
 	$.each($(".cg-new-cg-connection").get(), function(index, connection){
 		$(connection).remove();
 	});
@@ -113,7 +125,7 @@ function populateNewCGContainer()
 	});
 }
 
-function appendCG()
+function appendCG(connectionGroup, isNew)
 {
 	$("#cg-new-group-name").val("");
 	$("#btn-cg-create-group").css("width", "159px").removeClass("btn-success");
@@ -122,7 +134,7 @@ function appendCG()
 	$("#btn-cg-create-new-cg").overlay().close();
 
 	var connectionGroup = "<div class='connection-group-container' style='display:none' >" + 
-							"<div class='cg-connection-group-name' >" + group_name + "</div>" + 
+							"<div class='cg-connection-group-name' >" + connectionGroup["group_name"] + "</div>" + 
 							"<div class='cg-member-images-container' >" + 
 								"<div class='cg-member-image' ></div>" + 
 								"<div class='cg-member-image' ></div>" + 
@@ -132,5 +144,6 @@ function appendCG()
 						  "</div>";
 
 	var appendedElement = $(connectionGroup).appendTo("#connection-groups-container").fadeIn("fast");
-	$(appendedElement).css("background-color", "#E8F4FF").animate({"background-color": "#FFFFFF"}, 3000);	
+	if(isNew)
+		$(appendedElement).css("background-color", "#E8F4FF").animate({"background-color": "#FFFFFF"}, 3000);
 }

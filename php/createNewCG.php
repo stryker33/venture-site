@@ -14,5 +14,7 @@
 	if(mysqli_stmt_affected_rows($stmt) == 1)
 		echo "cg_created";
 
+	updateConnectionGroups($uid);
+	
 	mysqli_close($conn);
 ?>
