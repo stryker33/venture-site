@@ -1,6 +1,8 @@
-var uid, userInfo, notifications, connections, connection_requests;
+var uid, contentRequest, userInfo, notifications, connections, connection_requests;
 $(document).ready(function(e){
 	uid = $("#get-uid").val();
+	contentRequest = $("#get-content").val();
+
 	$("#search-box").val("");
 	populatePage();
 
@@ -48,10 +50,34 @@ $(document).ready(function(e){
 function populatePage()
 {
 	console.log(uid);
+	switchContent();
 	webSocketServerConnect(); //ws_message_handler.js
 	loadUserInfo();
 	loadNotifications();
 	loadConnections(); 
+}
+
+// Switch to the requested content
+function switchContent()
+{
+	switch(contentRequest)
+	{
+		case "home": 
+					 break;
+
+		case "profile": displayProfileContent();
+					 	break;
+
+		case "connections": displayConnectionsContent();
+					 		break;
+
+		case "channels": displayChannelsContent();
+					 	 break;
+
+		case "settings": displaySettingsContent();
+					 	 break;
+	}
+
 }
 
 // Retrieves and loads the userInfo into the profile section

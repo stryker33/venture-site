@@ -534,6 +534,12 @@ function generateEditProfile()
 	$("#ep-current-home").text(userInfo.user.current_home);
 	$("#ep-hometown").text(userInfo.user.hometown);
 
+	$.each($(".ep-desc-info-container").get(), function(index, desc){
+		$(desc).remove();
+	});
+
+	epEduDescCount = epWorkDescCount = 0;
+
 	$.each(userInfo.edu_desc, function(index, edu_desc){
 		var desc = "<div class='ep-desc-info-container' position='" + epEduDescCount + "'>" + 
 						"<table>" + 

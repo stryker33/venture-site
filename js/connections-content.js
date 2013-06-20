@@ -3,7 +3,7 @@ $(document).ready(function(e){
 
 	// search-connections key-up handler
 	$("#search-connections").on("keyup", function(e){
-		var searchQuery = $("#search-connections").val();
+		var searchQuery = $("#search-connections").val().toLowerCase();
 		if(searchQuery != "")
 		{
 			$.each($(".c-user-container").get(), function(index, value){

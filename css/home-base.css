@@ -20,6 +20,7 @@
 	background-color: #333333;
 	display: block;
 	box-shadow: 0px 0px 2.5px #000000;
+	z-index: 10;
 }
 
 #content-container-wrapper
@@ -231,7 +232,7 @@
 	height: 4%;
 	top: 0%;
 	left: 0%;
-	border-bottom: solid 1px #000000;
+	//border-bottom: solid 1px #000000;
 }
 
 .search-container
@@ -239,7 +240,7 @@
 	position: absolute;
 	width: 15%;
 	height: 58%;
-	top: 20%;
+	top: 25%;
 	right: 5%;
 	border-radius: 0px !important;
 	border: solid 1px #000000;

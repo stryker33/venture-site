@@ -11,6 +11,8 @@
 		<script type="text/javascript" src="/assets/js/jquery-1.9.1.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/jquery.ui.core.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/jquery-ui.min.js" ></script>
+		<script type="text/javascript" src="/assets/js/jquery-migrate-1.0.0.js" ></script>
+		<script type="text/javascript" src="/assets/js/jquery.tools.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/jquery.ui.datepicker.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/bootstrap.min.js" ></script>
 		<script src="/assets/js/autobahn.min.js"></script>
@@ -28,8 +30,9 @@
 		<script type="text/javascript" src="/js/search-content.js" ></script>
 		<script type="text/javascript" src="/js/profile-content.js" ></script>
 		<script type="text/javascript" src="/js/edit-profile-content.js" ></script>
-		<script type="text/javascript" src="/js/connection-requests-content.js" ></script>
 		<script type="text/javascript" src="/js/connections-content.js" ></script>
+		<script type="text/javascript" src="/js/connection-requests-content.js" ></script>
+		<script type="text/javascript" src="/js/connection-groups-content.js" ></script>
 		<script src="/js/ws-message-handler.js" type="text/javascript" ></script>
 		<link href="/css/home-base.css" rel="stylesheet" type="text/css" >
 		<link href="/css/home-content.css" rel="stylesheet" type="text/css" >
@@ -37,10 +40,12 @@
 		<link href="/css/user-container.css" rel="stylesheet" type="text/css" >
 		<link href="/css/profile-content.css" rel="stylesheet" type="text/css" >
 		<link href="/css/connections-content.css" rel="stylesheet" type="text/css" >
+		<link href="/css/connection-groups-content.css" rel="stylesheet" type="text/css" >
 	</head>
 
 	<body>
 		<input type="hidden" id="get-uid" value="<?php echo $_GET["uid"]; ?>" />
+		<input type="hidden" id="get-content" value="<?php echo $_GET["c"]; ?>" />
 		<div class="wrapper" >
 			<section>
 				<div id="banner-container" >
@@ -80,6 +85,7 @@
 						<div class="nav-menu-container sub-menu" id="connections-sub-menu" >
 							<div class="nav-menu">
 								<div class="nav-menu-element" id="connection-requests-tab" >Connection Requests</div>
+								<div class="nav-menu-element" id="connection-requests-tab" >Connection Groups</div>
 							</div>
 						</div>
 						<div class="nav-menu-container sub-menu" id="channels-sub-menu" >
@@ -284,6 +290,54 @@
 						</div> -->
 					</div>
 
+					<!-- Connection Groups Content -->
+					<div class="content-container" id="connection-groups-content" >
+						<div class="filters-container">
+							<div class="search-container" id="search-connection-groups-container" >
+								<div class="textbox-container" id="search-connection-groups-text-container">
+									<input class="textbox" id="search-connection-groups" type="text" placeholder="Search Connection Groups" />
+								</div>
+								<div class="search-icon-container"><i class="icon-search" ></i></div>
+							</div>
+							<button class="btn btn-mini" id="btn-cg-create-new-cg" rel="#cg-new-cg-container" ><icon class="icon-plus" ></icon> Create New Connection Group</button>
+						</div>
+						<div id="connection-groups-container" >
+							<div class="status-indicators" id="empty-cg-indicator" >
+								<span>No connection groups have been created.</span><br/>
+								<span>Create a new connection group to start with.</span>
+							</div>
+							<!--<div class="connection-group-container">
+								<div class="cg-connection-group-name" >Work Buddies</div>
+								<div class="cg-member-images-container" >
+									<div class="cg-member-image" ></div>
+									<div class="cg-member-image" ></div>
+								</div>
+								<button class="btn btn-mini btn-cg-edit-cg" ><i class="icon-cog" ></i> Edit Connection Group</button>
+								<button class="btn btn-mini btn-cg-remove-cg" ><i class="icon-minus" ></i> Remove Connection Group</button>
+							</div>-->
+						</div>
+						<div class="overlay-dialog-container" id="cg-new-cg-container" >
+							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >New Connection Group</span></div>
+							<div style="position: absolute; width: 100%; height: 92%; top: 10%;" >
+								<div class="textbox-container" id="cg-new-group-name-container" >
+									<input class="textbox" id="cg-new-group-name" type="text" placeholder="Connection Group Name" />
+								</div>
+								<button class="btn btn-small" id="btn-cg-create-group" >Create the Connection Group</button>
+								<div id="cg-main-connections-container">
+									<div class="textbox-container" id="cg-search-connections-container" >
+										<input class="textbox" id="cg-search-connections" type="text" placeholder="Search Connections" />
+									</div>
+									<div id="cg-connections-container">
+									</div>										
+									<!--<div class="cg-new-cg-connection">
+										<div class="cg-new-connection-image-container" ></div>
+										<div class="cg-new-connection-name" >Sagar Jadhav</div>
+										<button class="btn btn-mini btn-cg-new-connection-add btn-new-cg-action" >Add to the Group</button>
+									</div>-->
+								</div>
+							</div>
+						</div>
+					</div>
 					<!-- Search Content-->
 					<div class="content-container" id="search-content" >
 						<!-- <div class="sc-user-container" >

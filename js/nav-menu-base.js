@@ -38,6 +38,9 @@ $(document).ready(function(e){
 			case "ConnectionRequests": displayContent("Connection Requests");
 										break;
 
+			case "ConnectionGroups": displayContent("Connection Groups");
+									 break;
+
 			case "Channels": displayChannelsContent();
 						 	break;
 
@@ -99,7 +102,6 @@ function displayChannelsContent()
 	menuStack.push("Main");
 	displayMenu("Channels")
 }
-
 
 function displaySettingsContent()
 {
@@ -163,6 +165,9 @@ function displayContent(content)
 		case "Connection Requests": $("#connection-requests-content").fadeIn().removeClass("content-container").addClass("content-container-active");
 									break;	
 
+		case "Connection Groups": $("#connection-groups-content").fadeIn().removeClass("content-container").addClass("content-container-active");
+								  break;
+								  
 		case "Search": $("#search-content").fadeIn().removeClass("content-container").addClass("content-container-active");
 					   break;
 	}
