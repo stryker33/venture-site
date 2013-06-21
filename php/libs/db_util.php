@@ -40,7 +40,13 @@
 		$query = "Select uid, profile_image, first_name, last_name, gender, dob, current_home, hometown from user where uid=".$uid;
 		$result = mysqli_query($conn, $query) or die("query Execution failed: ".mysqli_error($conn));
 		$userInfo = mysqli_fetch_array($result, MYSQL_ASSOC);
+
+		//$pathInfo  = pathinfo($userInfo["profile_image"], PATHINFO_EXTENSION);
+		//$image = file_get_contents($userInfo["profile_image"]);
+		//$base64 = "data:image/".$pathInfo.";base64,".base64_encode($image);
+
 		$finalUserInfo["user"] = $userInfo;
+		//$finalUserInfo["user"]["profile_image"] = $base64;
 
 		// Query edu_desc table
 		$query = "Select institute_name from edu_desc where uid=".$uid;
@@ -250,6 +256,7 @@
 		$connectionGroupCount = 0;
 		$connectionGroups = array();
 		$connectionGroups["uid"] = $uid;
+		$connectionGroups["groups"] = array();
 
 		$query = "Select cg_name, cg_members from connection_groups where uid=$uid";
 		$result = mysqli_query($conn, $query) or die("Query Execution Failed: ".mysqli_error($conn));

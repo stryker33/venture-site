@@ -1,4 +1,6 @@
 var uid, contentRequest, userInfo, notifications, connections, connection_requests, connectionGroups;
+var fadeDelay = 500;
+
 $(document).ready(function(e){
 	uid = $("#get-uid").val();
 	contentRequest = $("#get-content").val();
@@ -92,8 +94,7 @@ function loadUserInfo()
 		dataType: "json",
 		success: function(data){
 			userInfo = data;
-			//userInfo = jQuery.parseJSON(data);
-			//$("#user-profile-image").attr("src", "https://localhost/images/profile_images/" + uid + "_pi.jpg");
+		
 			$("#username").text(userInfo.user.first_name + " " + userInfo.user.last_name);
 			generateProfile(); // profile-content.js
 			generateEditProfile(); // edit-profile-content.js
@@ -162,5 +163,32 @@ function loadConnectionGroups()
 			connectionGroups = data;
 			loadCGInfo(); // connection-groups-content.js
 		}
+	});
+}
+
+// Displays Message
+function displayMessage(messageType, message, switchToHome = false)
+{
+	if(messageType == "success" )
+		$("#message-container").addClass("alert-success");
+	if(messageType == "info" )
+		$("#message-container").addClass("alert-info");
+	if(messageType == "error" )
+		$("#message-container").addClass("alert-error");
+
+	$("#message-container").text(message);
+
+	if(switchToHome == true)
+		$("#home-tab").click();
+
+	var left = (($(".content-container").width() - $("#message-container").width()) / 2).toString() + "px";
+	
+	$("#message-container").css("left", left).fadeIn("fast").delay(3000).fadeOut("fast", function(){
+		if(messageType == "success" )
+			$("#message-container").removeClass("alert-success");
+		if(messageType == "info" )
+			$("#message-container").removeClass("alert-info");
+		if(messageType == "error" )
+			$("#message-container").removeClass("alert-error");
 	});
 }

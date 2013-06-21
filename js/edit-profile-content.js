@@ -456,7 +456,7 @@ $(document).ready(function(e){
 
 			var reader = new FileReader();
 			reader.onload = function(event) {
-				$("#ep-image-container").css("background-image", "url('" + event.target.result + "')")
+				$("#ep-image-container").css("background-image", "url('" + event.target.result + "')");
 				//profileImage = event.target.result;
 				imageSelected = true;
 			};

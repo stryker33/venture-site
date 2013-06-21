@@ -1,3 +1,12 @@
+.image-container
+{
+	border: solid 1px #000000;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	background-color: #000000;
+}
+
 #ep-image-container
 {
 	position: absolute;

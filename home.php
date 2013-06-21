@@ -25,6 +25,7 @@
 		<link href="/css/common-elements.css" rel="stylesheet" type="text/css" >
 
 		<script type="text/javascript" src="/js/home-base.js" ></script>
+		<script type="text/javascript" src="/js/home-util.js" ></script>
 		<script type="text/javascript" src="/js/common-js.js" ></script>
 		<script type="text/javascript" src="/js/nav-menu-base.js" ></script>
 		<script type="text/javascript" src="/js/home-content.js" ></script>
@@ -112,6 +113,8 @@
 			</section> 
 			<section>
 				<div id="content-container-wrapper">
+					<div class="alert" id="message-container" ></div>
+
 					<!-- Home Content -->
 					<div class="content-container-active" id="home-content" >
 					</div>
@@ -317,13 +320,17 @@
 								<button class="btn btn-mini btn-cg-remove-cg" ><i class="icon-minus" ></i> Remove Connection Group</button>
 							</div>-->
 						</div>
-						<div class="overlay-dialog-container" id="cg-new-cg-container" >
+
+						<!-- New Connection Group Overlay -->
+						<div class="overlay-dialog-container" id="cg-new-cg-container">
 							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >New Connection Group</span></div>
-							<div style="position: absolute; width: 100%; height: 92%; top: 10%;" >
+							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
 								<div class="textbox-container" id="cg-new-group-name-container" >
 									<input class="textbox" id="cg-new-group-name" type="text" placeholder="Connection Group Name" />
 								</div>
 								<button class="btn btn-small" id="btn-cg-create-group" >Create the Connection Group</button>
+								<button class="btn btn-mini" id="btn-cg-select-all" >Select All</button>
+								<button class="btn btn-mini" id="btn-cg-deselect-all" >Deselect All</button>
 								<div id="cg-main-connections-container">
 									<div class="textbox-container" id="cg-search-connections-container" >
 										<input class="textbox" id="cg-search-connections" type="text" placeholder="Search Connections" />
@@ -331,6 +338,31 @@
 									<div id="cg-connections-container">
 									</div>										
 									<!--<div class="cg-new-cg-connection">
+										<div class="cg-new-connection-image-container" ></div>
+										<div class="cg-new-connection-name" >Sagar Jadhav</div>
+										<button class="btn btn-mini btn-cg-new-connection-add btn-new-cg-action" >Add to the Group</button>
+									</div>-->
+								</div>
+							</div>
+						</div>
+
+						<!-- Edit Connection Group Overlay-->
+						<div class="overlay-dialog-container" id="cg-edit-cg-container" >
+							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" ></span></div>
+							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+								<div class="textbox-container" id="cg-edit-group-name-container" >
+									<input class="textbox" id="cg-edit-group-name" type="text" placeholder="Connection Group Name" />
+								</div>
+								<button class="btn btn-small" id="btn-cg-edit-done" >Done</button>
+								<button class="btn btn-mini" id="btn-cg-select-all" >Select All</button>
+								<button class="btn btn-mini" id="btn-cg-deselect-all" >Deselect All</button>
+								<div id="cg-main-connections-container">
+									<div class="textbox-container" id="cg-search-connections-container" >
+										<input class="textbox" id="cg-search-connections" type="text" placeholder="Search Connections" />
+									</div>
+									<div id="cg-connections-container">
+									</div>										
+									<!--<div class="cg-edit-cg-connection">
 										<div class="cg-new-connection-image-container" ></div>
 										<div class="cg-new-connection-name" >Sagar Jadhav</div>
 										<button class="btn btn-mini btn-cg-new-connection-add btn-new-cg-action" >Add to the Group</button>
