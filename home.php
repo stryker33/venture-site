@@ -35,6 +35,7 @@
 		<script type="text/javascript" src="/js/connections-content.js" ></script>
 		<script type="text/javascript" src="/js/connection-requests-content.js" ></script>
 		<script type="text/javascript" src="/js/connection-groups-content.js" ></script>
+		<script type="text/javascript" src="/js/channels-content.js" ></script>
 		<script src="/js/ws-message-handler.js" type="text/javascript" ></script>
 		<link href="/css/home-base.css" rel="stylesheet" type="text/css" >
 		<link href="/css/home-content.css" rel="stylesheet" type="text/css" >
@@ -43,6 +44,7 @@
 		<link href="/css/profile-content.css" rel="stylesheet" type="text/css" >
 		<link href="/css/connections-content.css" rel="stylesheet" type="text/css" >
 		<link href="/css/connection-groups-content.css" rel="stylesheet" type="text/css" >
+		<link href="/css/channels-content.css" rel="stylesheet" type="text/css" >
 	</head>
 
 	<body>
@@ -97,15 +99,14 @@
 								<div class="nav-menu-element" >Item 3</div>
 								<div class="nav-menu-element" >Item 4</div>
 								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
-								<div class="nav-menu-element" >Item 5</div>
+								<div class="nav-menu-element" >Item 6</div>
+								<div class="nav-menu-element" >Item 7</div>
+								<div class="nav-menu-element" >Item 8</div>
+								<div class="nav-menu-element" >Item 9</div>
+								<div class="nav-menu-element" >Item 10</div>
+								<div class="nav-menu-element" >Item 11</div>
+								<div class="nav-menu-element" >Item 12</div>
+								<div class="nav-menu-element" >Item 13</div>
 							</div>
 						</div>
 					<div>
@@ -144,6 +145,7 @@
 						</div>
 					</div>
 
+					<!-- Edit Profile Content -->
 					<div class="content-container" id="edit-profile-content" >
 						<div id="ep-image-container" >
 							<div id="ep-change-image-container"><span>Change Profile Image</span></div>
@@ -305,7 +307,7 @@
 							</div>
 							<button class="btn btn-mini" id="btn-cg-create-new-cg" rel="#cg-new-cg-container" ><icon class="icon-plus" ></icon> Create New Connection Group</button>
 						</div>
-						<div id="connection-groups-container" >
+						<div class="content-sub-container" id="connection-groups-container" >
 							<div class="status-indicators" id="empty-cg-indicator" >
 								<span>No connection groups have been created.</span><br/>
 								<span>Create a new connection group to start with.</span>
@@ -403,9 +405,43 @@
 						</div> -->
 					</div>
 
+					<!-- Channels Content -->
+					<div class="content-container" id="channels-content" >
+						<div class="filters-container">
+							<div class="search-container" id="search-channels-container" >
+								<div class="textbox-container" id="search-channels-text-container">
+									<input class="textbox" id="search-channels" type="text" placeholder="Search Channels" />
+								</div>
+								<div class="search-icon-container"><i class="icon-search" ></i></div>
+							</div>
+							<button class="btn btn-mini" id="btn-c-create-new-channel" rel="#c-new-channel-container" ><icon class="icon-plus" ></icon> Create New Channel</button>
+						</div>
+						<div class="content-sub-container" id="#channels-container" >
+							<div class="status-indicators" id="empty-channel-content-indicator" style="top: 35%">
+								<span>No Channels have been created.</span><br/>
+								<span>Create a new Channel to start with.</span>
+							</div>
+						</div>
+
+						<!-- New Channel Overlay -->
+						<div class="overlay-dialog-container" id="c-new-channel-container">
+							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >New Channel</span></div>
+							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+								<div class="image-container" id="new-channel-cover-container" ></div>
+								<div class="textbox-container" id="c-new-channel-name-container" >
+									<input class="textbox" id="c-new-channel-name" type="text" placeholder="Channel Name" />
+								</div>
+								<button class="btn btn-small" id="btn-c-new-channel-create" >Create Channel</button>
+								<div class="textbox-container" id="c-new-channel-desc-container" >
+									<textarea class="textbox" id="c-new-channel-desc" placeholder = "Describe the purpose of the Channel" 
+									style="text-align: left ! important; padding-left: 1% ! important; width: 98.9% ! important;" ></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</section>
 		</div>
 	</body>
 </html>
- 

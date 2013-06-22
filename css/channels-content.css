@@ -1,0 +1,52 @@
+#btn-c-create-new-channel
+{
+	position: absolute;
+	top: 25%;
+	right: 5%;
+}
+
+#c-new-channel-container
+{
+	position: absolute;
+	width: 770px;
+	height: 400px;
+	top: 150px !important;
+	left: 221px;
+	display: none;
+}
+
+#new-channel-cover-container
+{
+	position: absolute;
+	width: 45%;
+	height: 90%;
+	top: 5%;
+	left: 5%;
+	border: solid 1px #000000;
+}
+
+#c-new-channel-name-container
+{
+	position: absolute;
+	width: 25%;
+	top: 10%;
+	left: 53%;
+}
+
+#btn-c-new-channel-create
+{
+	position: absolute;
+	width: 95px;
+	height: auto;
+	top: 10%;
+	left: 83%;
+}
+
+#c-new-channel-desc-container
+{
+	position: absolute;
+	width: 42%;
+	height: 45%;
+	top: 21%;
+	left: 53%;
+}

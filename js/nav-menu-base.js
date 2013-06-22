@@ -100,7 +100,8 @@ function displayConnectionsContent()
 function displayChannelsContent()
 {
 	menuStack.push("Main");
-	displayMenu("Channels")
+	displayContent("Channels");
+	displayMenu("Channels");
 }
 
 function displaySettingsContent()
@@ -169,6 +170,9 @@ function displayContent(content)
 								  break;
 								  
 		case "Search": $("#search-content").fadeIn().removeClass("content-container").addClass("content-container-active");
+					   break;
+
+		case "Channels": $("#channels-content").fadeIn().removeClass("content-container").addClass("content-container-active");
 					   break;
 	}
 }
