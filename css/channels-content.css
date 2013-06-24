@@ -25,6 +25,11 @@
 	border: solid 1px #000000;
 }
 
+#c-new-channel-cover-prompt
+{
+	height: 10%;
+}
+
 #c-new-channel-name-container
 {
 	position: absolute;
@@ -36,10 +41,21 @@
 #btn-c-new-channel-create
 {
 	position: absolute;
-	width: 95px;
+	width: 99px;
 	height: auto;
 	top: 10%;
 	left: 83%;
+}
+
+#c-new-channel-visibility-select
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 20%;
+	left: 53%;
+	font-size: 11px;
+	font-weight: 700;
 }
 
 #c-new-channel-desc-container
@@ -47,6 +63,6 @@
 	position: absolute;
 	width: 42%;
 	height: 45%;
-	top: 21%;
+	top: 28%;
 	left: 53%;
 }

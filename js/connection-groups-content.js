@@ -337,6 +337,8 @@ function loadCGInfo()
 
 	if($(".connection-group-container").get().length == 0)
 		$("#empty-cg-indicator").show();
+
+	loadCGAsOption();
 }
 
 function populateNewCGContainer()
@@ -442,4 +444,13 @@ function groupNameExists(groupName)
 	});
 
 	return exists;
+}
+
+// loads the Connection Groups within the selectors
+function loadCGAsOption()
+{
+	var cg = jQuery.parseJSON(connectionGroups);
+	$.each(cg.groups, function(index, connectionGroup){
+		$("#c-new-channel-visibility-select select").append("<option>" + connectionGroup.group_name + "</option>");
+	});
 }

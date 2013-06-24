@@ -427,11 +427,20 @@
 						<div class="overlay-dialog-container" id="c-new-channel-container">
 							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >New Channel</span></div>
 							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
-								<div class="image-container" id="new-channel-cover-container" ></div>
+								<div class="image-container" id="new-channel-cover-container" >
+									<div class="image-prompt" id="c-new-channel-cover-prompt" >Select Channel Cover</div>
+								</div>
 								<div class="textbox-container" id="c-new-channel-name-container" >
 									<input class="textbox" id="c-new-channel-name" type="text" placeholder="Channel Name" />
 								</div>
 								<button class="btn btn-small" id="btn-c-new-channel-create" >Create Channel</button>
+								<div id="c-new-channel-visibility-select" >
+									<span>Channel Visibility: </span>
+									<select>
+										<option>Public</option>
+										<option>All Connections</option>
+									</select>
+								</div>
 								<div class="textbox-container" id="c-new-channel-desc-container" >
 									<textarea class="textbox" id="c-new-channel-desc" placeholder = "Describe the purpose of the Channel" 
 									style="text-align: left ! important; padding-left: 1% ! important; width: 98.9% ! important;" ></textarea>
