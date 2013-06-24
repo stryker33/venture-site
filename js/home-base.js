@@ -1,4 +1,4 @@
-var uid, contentRequest, userInfo, notifications, connections, connection_requests, connectionGroups;
+var uid, contentRequest, userInfo, notifications, connections, connection_requests, connectionGroups, channels;
 var fadeDelay = 500;
 
 $(document).ready(function(e){
@@ -58,6 +58,7 @@ function populatePage()
 	loadNotifications();
 	loadConnections();
 	loadConnectionGroups();
+	loadChannels();
 }
 
 // Switch to the requested content
@@ -162,6 +163,21 @@ function loadConnectionGroups()
 		success: function(data){
 			connectionGroups = data;
 			loadCGInfo(); // connection-groups-content.js
+		}
+	});
+}
+
+// Retrieves and loads the channels
+function loadChannels()
+{
+	$.ajaxq("loadQueue", {
+		url: "/php/getChannels.php",
+		type: "GET",
+		data: {uid: uid},
+		dataType: "json",
+		success: function(data){
+			channels = data;
+			loadChannelsInfo(); // channels-content.js
 		}
 	});
 }

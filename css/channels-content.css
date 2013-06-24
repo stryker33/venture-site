@@ -5,7 +5,7 @@
 	right: 5%;
 }
 
-#c-new-channel-container
+#c-new-channel-container, #c-edit-channel-container
 {
 	position: absolute;
 	width: 770px;
@@ -15,7 +15,7 @@
 	display: none;
 }
 
-#new-channel-cover-container
+#new-channel-cover-container, #edit-channel-cover-container
 {
 	position: absolute;
 	width: 45%;
@@ -25,12 +25,9 @@
 	border: solid 1px #000000;
 }
 
-#c-new-channel-cover-prompt
-{
-	height: 10%;
-}
+#c-new-channel-cover-prompt{height: 10%;}, #c-edit-channel-cover-prompt{height: 10%;}
 
-#c-new-channel-name-container
+#c-new-channel-name-container, #c-edit-channel-name-container
 {
 	position: absolute;
 	width: 25%;
@@ -38,7 +35,7 @@
 	left: 53%;
 }
 
-#btn-c-new-channel-create
+#btn-c-new-channel-create, #btn-c-edit-channel-done
 {
 	position: absolute;
 	width: 99px;
@@ -47,7 +44,7 @@
 	left: 83%;
 }
 
-#c-new-channel-visibility-select
+#c-new-channel-visibility-select, #c-edit-channel-visibility-select
 {
 	position: absolute;
 	width: auto;
@@ -58,7 +55,7 @@
 	font-weight: 700;
 }
 
-#c-new-channel-desc-container
+#c-new-channel-desc-container, #c-edit-channel-desc-container
 {
 	position: absolute;
 	width: 42%;
@@ -66,3 +63,65 @@
 	top: 28%;
 	left: 53%;
 }
+
+.channel-container
+{
+	position: relative;
+	width: 90%;
+	height: 18%;
+	left: 5%;
+	border-bottom: solid 1px #000000;
+}
+
+.channel-cover-container
+{
+	position: absolute;
+	width: 10.9%;
+	height: 80%;
+	top: 10%;
+	right: 0%;
+}
+
+.channel-name-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 18%;
+	right: 14%;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.channel-visibility-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 30%;
+	right: 14%;
+	font-size: 10px;
+	font-weight: 500;
+}
+
+.channel-desc-container
+{
+	position: absolute;
+	width: 50%;
+	height: 35%;
+	top: 45%;
+	right: 14%;
+	font-size: 10px;
+	font-weight: 500;
+	text-align: right;
+}
+
+.btn-c-channel-edit, .btn-c-channel-remove
+{
+	position: absolute;
+	height: auto;
+	top: 18%;
+}
+
+.btn-c-channel-edit{width: 98px; left: 15%;}
+.btn-c-channel-remove{width: 114px; left: 3%;}

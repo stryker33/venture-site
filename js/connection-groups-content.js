@@ -453,4 +453,8 @@ function loadCGAsOption()
 	$.each(cg.groups, function(index, connectionGroup){
 		$("#c-new-channel-visibility-select select").append("<option>" + connectionGroup.group_name + "</option>");
 	});
+
+	$.each(cg.groups, function(index, connectionGroup){
+		$("#c-edit-channel-visibility-select select").append("<option>" + connectionGroup.group_name + "</option>");
+	});
 }

@@ -270,4 +270,41 @@
 
 		return $connectionGroups;
 	}
+
+	// Returns the Channels corresponding to a user
+	function getChannels($uid)
+	{
+		$memcached = initMemcached();
+
+		$cache_result = $memcached->get(md5("user-channels-".$uid));
+		if($cache_result)
+		{
+			return $cache_result;
+		}
+		else
+		{
+			$userChannels = updateChannels($uid);
+			return $userChannels;		
+		}
+	}
+
+	// Updates the user-channels-uid key stored in memcached
+	function updateChannels($uid)
+	{
+		$conn = connect("127.0.0.1", "5000", "root", "");
+		$memcached = initMemcached();
+		
+		$userChannels = array();
+
+		// Query connections table
+		$query = "Select channel_name, channel_visibility, channel_desc from channels where channel_owner_uid=$uid";
+		$result = mysqli_query($conn, $query) or die("Query Execution failed: ".mysqli_error($conn));
+		while($channel = mysqli_fetch_array($result, MYSQL_ASSOC))
+			$userChannels[] = $channel;
+
+		$memcached->set(md5("user-channels-".$uid), $userChannels);
+		mysqli_close($conn);
+
+		return $userChannels;
+	}
 ?>

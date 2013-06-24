@@ -94,7 +94,7 @@
 						</div>
 						<div class="nav-menu-container sub-menu" id="channels-sub-menu" >
 							<div class="nav-menu">
-								<div class="nav-menu-element-active" >Item 1</div>
+								<!-- <div class="nav-menu-element-active" >Item 1</div>
 								<div class="nav-menu-element" >Item 2</div>
 								<div class="nav-menu-element" >Item 3</div>
 								<div class="nav-menu-element" >Item 4</div>
@@ -106,7 +106,7 @@
 								<div class="nav-menu-element" >Item 10</div>
 								<div class="nav-menu-element" >Item 11</div>
 								<div class="nav-menu-element" >Item 12</div>
-								<div class="nav-menu-element" >Item 13</div>
+								<div class="nav-menu-element" >Item 13</div> -->
 							</div>
 						</div>
 					<div>
@@ -373,6 +373,7 @@
 							</div>
 						</div>
 					</div>
+
 					<!-- Search Content-->
 					<div class="content-container" id="search-content" >
 						<!-- <div class="sc-user-container" >
@@ -416,11 +417,19 @@
 							</div>
 							<button class="btn btn-mini" id="btn-c-create-new-channel" rel="#c-new-channel-container" ><icon class="icon-plus" ></icon> Create New Channel</button>
 						</div>
-						<div class="content-sub-container" id="#channels-container" >
-							<div class="status-indicators" id="empty-channel-content-indicator" style="top: 35%">
+						<div class="content-sub-container" id="channels-container" >
+							<div class="status-indicators" id="empty-channel-content-indicator" style="top: 35%; display: none;">
 								<span>No Channels have been created.</span><br/>
 								<span>Create a new Channel to start with.</span>
 							</div>
+							<!-- <div class="channel-container" >
+								<div class="image-container channel-cover-container" ></div>
+								<div class="channel-name-container" ><span>Sample Channel</span></div>
+								<div class="channel-visibility-container" ><span>Public</span></div>
+								<div class="channel-desc-container" ><span>It's just a sample channel</span></div>
+								<button class="btn btn-mini btn-c-channel-edit" ><i class="icon-cog"></i> Edit Channel</button>
+								<button class="btn btn-mini btn-c-channel-remove" ><i class="icon-minus"></i> Remove Channel</button>
+							</div> -->
 						</div>
 
 						<!-- New Channel Overlay -->
@@ -438,7 +447,7 @@
 									<span>Channel Visibility: </span>
 									<select>
 										<option>Public</option>
-										<option>All Connections</option>
+										<option>Connections Only</option>
 									</select>
 								</div>
 								<div class="textbox-container" id="c-new-channel-desc-container" >
@@ -447,8 +456,32 @@
 								</div>
 							</div>
 						</div>
-					</div>
 
+						<!-- Edit Channel Overlay -->
+						<div class="overlay-dialog-container" id="c-edit-channel-container">
+							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" ></span></div>
+							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+								<div class="image-container" id="edit-channel-cover-container" >
+									<div class="image-prompt" id="c-edit-channel-cover-prompt" >Select Channel Cover</div>
+								</div>
+								<div class="textbox-container" id="c-edit-channel-name-container" >
+									<input class="textbox" id="c-edit-channel-name" type="text" placeholder="Channel Name" />
+								</div>
+								<button class="btn btn-small" id="btn-c-edit-channel-done" >Done</button>
+								<div id="c-edit-channel-visibility-select" >
+									<span>Channel Visibility: </span>
+									<select>
+										<option>Public</option>
+										<option>Connections Only</option>
+									</select>
+								</div>
+								<div class="textbox-container" id="c-edit-channel-desc-container" >
+									<textarea class="textbox" id="c-edit-channel-desc" placeholder = "Describe the purpose of the Channel" 
+									style="text-align: left ! important; padding-left: 1% ! important; width: 98.9% ! important;" ></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
