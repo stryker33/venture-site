@@ -11,7 +11,7 @@ var nsConn; // NotificationServer Connection Object
 
 function webSocketServerConnect()
 {
-	notificationServerConnect();
+	//notificationServerConnect();
 }
 
 function notificationServerConnect()

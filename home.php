@@ -19,6 +19,7 @@
 		<script src="/assets/js/autobahn.min.js"></script>
 		<script type="text/javascript" src="/assets/js/jquery.fileupload.js"  ></script>
 
+		<link href="/assets/css/ubuntu-font/ubuntu-font.css" rel="stylesheet" type="text/css" >
 		<link href="/assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css" >
 		<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
 

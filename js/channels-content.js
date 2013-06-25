@@ -110,7 +110,7 @@ $(document).ready(function(e){
 		})
 	});
 
-	// Keyup handler for 
+	// Keyup handler for search-channels
 	$(document).on("keyup", "#search-channels", function(e){
 		var searchQuery = jQuery.trim($(this).val()).toLowerCase();
 

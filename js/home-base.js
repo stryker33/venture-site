@@ -183,8 +183,9 @@ function loadChannels()
 }
 
 // Displays Message
-function displayMessage(messageType, message, switchToHome = false)
+function displayMessage(messageType, message, switchToHome)
 {
+	switchToHome = false;
 	if(messageType == "success" )
 		$("#message-container").addClass("alert-success");
 	if(messageType == "info" )

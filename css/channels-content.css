@@ -93,6 +93,7 @@
 	font-weight: 700;
 }
 
+.channel-name-container span:hover{cursor: pointer; text-decoration: underline;}
 .channel-visibility-container
 {
 	position: absolute;
@@ -124,4 +125,4 @@
 }
 
 .btn-c-channel-edit{width: 98px; left: 15%;}
-.btn-c-channel-remove{width: 114px; left: 3%;}
+.btn-c-channel-remove{width: 115px; left: 3%;}
