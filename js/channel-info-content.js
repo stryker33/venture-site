@@ -14,8 +14,9 @@ $(document).ready(function(e){
 	});
 
 	$(".ci-tab").click(function(e){
+		console.log("Invoked");
 		var activeTab = $(".ci-tab-active").get()[0];
-		$(activeTab).removeClass("ci-tab-active");
+		$(activeTab).removeClass("ci-tab-active").addClass("ci-tab");
 		$(this).addClass("ci-tab-active");
 	});
 

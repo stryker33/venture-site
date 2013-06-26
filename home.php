@@ -330,7 +330,8 @@
 						<!-- New Connection Group Overlay -->
 						<div class="overlay-dialog-container" id="cg-new-cg-container">
 							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >New Connection Group</span></div>
-							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+							<div class="overlay-divider" style="top: 7%;" ></div>
+							<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
 								<div class="textbox-container" id="cg-new-group-name-container" >
 									<input class="textbox" id="cg-new-group-name" type="text" placeholder="Connection Group Name" />
 								</div>
@@ -355,7 +356,8 @@
 						<!-- Edit Connection Group Overlay-->
 						<div class="overlay-dialog-container" id="cg-edit-cg-container" >
 							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" ></span></div>
-							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+							<div class="overlay-divider" style="top: 7%;" ></div>
+							<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
 								<div class="textbox-container" id="cg-edit-group-name-container" >
 									<input class="textbox" id="cg-edit-group-name" type="text" placeholder="Connection Group Name" />
 								</div>
@@ -439,7 +441,8 @@
 						<!-- New Channel Overlay -->
 						<div class="overlay-dialog-container" id="c-new-channel-container">
 							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >New Channel</span></div>
-							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+							<div class="overlay-divider" style="top: 7%;" ></div>
+							<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
 								<div class="image-container" id="new-channel-cover-container" >
 									<div class="image-prompt" id="c-new-channel-cover-prompt" >Select Channel Cover</div>
 								</div>
@@ -464,7 +467,8 @@
 						<!-- Edit Channel Overlay -->
 						<div class="overlay-dialog-container" id="c-edit-channel-container">
 							<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" ></span></div>
-							<div style="position: absolute; width: 100%; height: 92%; top: 8%;" >
+							<div class="overlay-divider" style="top: 7%;" ></div>
+							<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
 								<div class="image-container" id="edit-channel-cover-container" >
 									<div class="image-prompt" id="c-edit-channel-cover-prompt" >Select Channel Cover</div>
 								</div>
