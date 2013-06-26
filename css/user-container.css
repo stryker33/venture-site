@@ -91,7 +91,7 @@
 	right: 78%;
 }
 
-.uc-user-btn-group .dropdown-menu li
+.dropdown-menu li
 {
 	position: relative;
 	width: auto;
@@ -102,4 +102,4 @@
 	padding-right: 8%;
 }
 
-.uc-user-btn-group .dropdown-menu li:hover{cursor: pointer; background-color: #1E90FF; border-top: solid 0.1px #000000; border-bottom: solid 0.1px #000000;};
+.dropdown-menu li:hover{cursor: pointer; background-color: #1E90FF; border-top: solid 0.1px #000000; border-bottom: solid 0.1px #000000;};

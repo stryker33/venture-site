@@ -5,6 +5,7 @@ $(document).ready(function(e){
 	uid = $("#get-uid").val();
 	contentRequest = $("#get-content").val();
 
+	$(".content-container").niceScroll();
 	$("#search-box").val("");
 	populatePage();
 
@@ -21,7 +22,9 @@ $(document).ready(function(e){
 		
 		$("#content-desc-header").text("Search");
 		displayContent("Search");
-		displayMenu("Main");
+		//displayMenu("Main");
+		var activeElement = $(".nav-menu-element-active").get()[0];
+		$(activeElement).addClass("nav-menu-element").removeClass("nav-menu-element-active");
 	}).focusout(function(e){
 		$("#search-box-container").css({"background": "transparent", "border": "none !important"});
 		$(this).css("background", "transparent");

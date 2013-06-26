@@ -134,6 +134,11 @@ $(document).ready(function(e){
 		});
 	});
 
+	// Click handler for channel-name-container
+	$(document).on("click", ".channel-name-container", function(e){
+		var channelName = $(this).children("span").text();
+		populateChannelInfo(channelName); // channel-info-content.js
+	});
 });
 
 function loadChannelsInfo()

@@ -18,6 +18,7 @@
 		<script type="text/javascript" src="/assets/js/jquery.ajaxq-0.0.1.js" ></script>
 		<script src="/assets/js/autobahn.min.js"></script>
 		<script type="text/javascript" src="/assets/js/jquery.fileupload.js"  ></script>
+		<script type="text/javascript" src="/assets/js/jquery.nicescroll.js"  ></script>
 
 		<link href="/assets/css/ubuntu-font/ubuntu-font.css" rel="stylesheet" type="text/css" >
 		<link href="/assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css" >
@@ -37,6 +38,7 @@
 		<script type="text/javascript" src="/js/connection-requests-content.js" ></script>
 		<script type="text/javascript" src="/js/connection-groups-content.js" ></script>
 		<script type="text/javascript" src="/js/channels-content.js" ></script>
+		<script type="text/javascript" src="/js/channel-info-content.js" ></script>
 		<script src="/js/ws-message-handler.js" type="text/javascript" ></script>
 		<link href="/css/home-base.css" rel="stylesheet" type="text/css" >
 		<link href="/css/home-content.css" rel="stylesheet" type="text/css" >
@@ -46,6 +48,7 @@
 		<link href="/css/connections-content.css" rel="stylesheet" type="text/css" >
 		<link href="/css/connection-groups-content.css" rel="stylesheet" type="text/css" >
 		<link href="/css/channels-content.css" rel="stylesheet" type="text/css" >
+		<link href="/css/channel-info-content.css" rel="stylesheet" type="text/css" >
 	</head>
 
 	<body>
@@ -483,6 +486,46 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- Channel Info Content -->
+					<div class="content-container" id="channel-info-content" >
+						<div id="channel-info-container" >
+							<div class="image-container" id="ci-channel-cover-container" ></div>
+							<div id="ci-channel-name-container" ></div>
+							<div id="ci-channel-visibility-container" ></div>
+							<div id="ci-channel-desc-container" ><span></span></div>
+							<button class="btn btn-mini" id="btn-ci-edit-channel" ><i class="icon-cog" ></i> Edit Channel</button>
+							<button class="btn btn-mini" id="btn-ci-remove-channel" ><i class="icon-minus" ></i> Remove Channel</button>
+							<div id="ci-channel-view-options-container" >
+								<span>View Channel as: </span>
+								<div class="btn-group" >
+									<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#" style="width: 11em;">
+									Self
+										<span class="caret" style="position: absolute; right: 5%;" ></span>
+									</a>
+									<ul class="dropdown-menu pull-right" >
+									 <li>Connections</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="channel-content-container">
+							<div id="ci-tabs-content-container" class="carousel slide">
+							<div id="ci-tabs-container" >
+								<div class="ci-tab ci-tab-active active" id="ci-tab-live-broadcasts" 
+								data-target="#ci-tabs-content-container" data-slide-to="0" ><span>Live Broadcasts</span></div>
+								<div class="ci-tab" id="ci-tab-uploaded" 
+								data-target="#ci-tabs-content-container" data-slide-to="1" ><span>Uploaded</span></div>
+							</div>
+
+							<div class="ci-carousel-container carousel-inner" >
+								<div class="ci-tab-content-container item active" id="ci-live-broadcasts-content" >Live Broadcasts</div>
+								<div class="ci-tab-content-container item" id="ci-uploaded-content" >Uploaded</div>
+							</div>
+						</div>
+						</div>
+					</div> 
+
 				</div>
 			</section>
 		</div>

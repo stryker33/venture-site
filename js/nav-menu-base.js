@@ -7,7 +7,7 @@ $(document).ready(function(e){
 	*
 	*************************************************************************************************************/
 
-	$(".nav-menu-element, .nav-menu-element-active").click(function(e){
+	$(document).on("click", ".nav-menu-element, .nav-menu-element-active", function(e){
 		// Change the class of the previous active element
 		//var activeElement = $(".nav-menu-container-active .nav-menu-element-active").get()[0];
 		var activeElement = $(".nav-menu-element-active").get()[0];
@@ -47,6 +47,10 @@ $(document).ready(function(e){
 			case "Settings": displaySettingsContent();
 						 	break;
 		}
+
+		if($(this).parent().parent().attr("id") == "channels-sub-menu" )
+			populateChannelInfo($(this).text()); // channel-info-content.js
+
 		if($("#" + $(this).attr("id") + " .notification-count").length > 0)
 		{
 			$("#" + $(this).attr("id") + " .notification-count").remove();
@@ -71,6 +75,8 @@ $(document).ready(function(e){
 			displayMenu(previousMenu);
 		}
 	});
+
+	// Click handler for 
 });
 
 /*************************************************************************************************************
@@ -116,7 +122,6 @@ function animateMenu()
 		$(this).delay(index * 50).fadeIn();
 	});
 }
-
 function displayMenu(subMenu)
 {
 	$("#main-menu").fadeOut("fast").removeClass("nav-menu-container-active").addClass("nav-menu-container");
@@ -174,6 +179,9 @@ function displayContent(content)
 
 		case "Channels": $("#channels-content").fadeIn().removeClass("content-container").addClass("content-container-active");
 					   break;
+
+		case "Channel Info": $("#channel-info-content").fadeIn().removeClass("content-container").addClass("content-container-active");
+					   		 break;
 	}
 }
 

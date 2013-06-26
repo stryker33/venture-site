@@ -1,0 +1,144 @@
+#channel-info-container
+{
+	position: absolute;
+	width: 100%;
+	height: 25%;
+	top: 0%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+#channel-content-container
+{
+	position: absolute;
+	width: 100%;
+	height: 75%;
+	top: 25%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+#ci-channel-cover-container
+{
+	position: absolute;
+	width: 15%;
+	height: 90%;
+	top: 5%;
+	right: 5%;
+}
+
+#ci-channel-name-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 25%;
+	right: 21.5%;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: right;
+}
+
+#ci-channel-visibility-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 35.5%;
+	right: 21.5%;
+	font-size: 11px;
+	font-weight: 500;
+	text-align: right;
+}
+
+#ci-channel-desc-container
+{
+	position: absolute;
+	width: 48%;
+	height: 50%;
+	top: 47%;
+	right: 21.5%;
+	font-size: 11px;
+	font-weight: 500;
+	text-align: right;
+}
+
+#btn-ci-edit-channel, #btn-ci-remove-channel
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 25%;
+}
+
+#btn-ci-edit-channel{left: 14%;}
+#btn-ci-remove-channel{left: 3%;}
+
+#ci-channel-view-options-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 25%;
+	left: 24%;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+#ci-tabs-content-container
+{
+	position: absolute;
+	width: 100%;
+	height: 65%;
+	top: 0%;
+	left: 0%;
+}
+
+#ci-tabs-container
+{
+	position: absolute;
+	width: 100%;
+	height: 5%;
+	top: 0%;
+	left: 0%;
+}
+
+.ci-tab
+{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	font-size: 11px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.ci-tab-active{border-bottom: solid 3px #1E90FF;}
+.ci-tab:hover, .user-profile-tab-active:hover{cursor: pointer;}
+
+#ci-tab-live-broadcasts{left: 0%;}
+#ci-tab-uploaded{left: 50%;}
+
+.ci-carousel-container
+{
+	position: absolute;
+	width: 100%;
+	height: 95%;
+	top: 5%;
+	left: 0%;
+}
+
+.ci-tab-content-container
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 25px;
+	font-weight: 700;
+	text-align: center;
+	overflow: auto;
+}
+
+//#user-profile-posts{background-color: #000000; }
+//#user-profile-connections{background-color: #FF0000;}
+//#user-profile-channels{background-color: #00FF00;}
