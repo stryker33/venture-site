@@ -501,7 +501,7 @@
 							<div id="ci-channel-desc-container" ><span></span></div>
 							<button class="btn btn-mini" id="btn-ci-edit-channel" ><i class="icon-cog" ></i> Edit Channel</button>
 							<button class="btn btn-mini" id="btn-ci-remove-channel" ><i class="icon-minus" ></i> Remove Channel</button>
-							<div id="ci-channel-view-options-container" >
+							<div id="ci-channel-view-options-container" style="display: none" >
 								<span>View Channel as: </span>
 								<div class="btn-group" >
 									<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#" style="width: 11em;">
@@ -515,23 +515,58 @@
 							</div>
 						</div>
 						<div id="ci-channel-header" ><i class="icon-film" ></i><span></span></div>
-						<div id="channel-content-container" style="height: 95.5%" >
-							<div id="ci-tabs-content-container" class="carousel slide">
-							<div id="ci-tabs-container" >
-								<div class="ci-tab ci-tab-active active" id="ci-tab-live-broadcasts" 
-								data-target="#ci-tabs-content-container" data-slide-to="0" ><span>Live Broadcasts</span></div>
-								<div class="ci-tab" id="ci-tab-uploaded" 
-								data-target="#ci-tabs-content-container" data-slide-to="1" ><span>Uploaded</span></div>
+						<div id="channel-content-container" style="height: 96%;" >
+							<div class="filters-container">
+								<div class="search-container" id="search-videos" style="top: 24%">
+									<div class="textbox-container" id="search-videos-text-container">
+										<input class="textbox" id="search-videos" type="text" placeholder="Search Channel" />
+									</div>
+									<div class="search-icon-container"><i class="icon-search" ></i></div>
+								</div>
+								<button class="btn btn-mini" id="btn-ci-start-live-broadcast" rel="#ci-start-live-broadcast-container" ><icon class="icon-facetime-video" ></icon> Start Live Broadcast</button>
+								<button class="btn btn-mini" id="btn-ci-upload-video" rel="#ci-upload-video-container" ><icon class="icon-upload" ></icon> Upload Video</button>
 							</div>
-							<div class="ci-carousel-container carousel-inner" >
-								<!-- <div class="ci-tab-content-container item active" id="ci-live-broadcasts-content" ><div style="width: 100%; height: 10px; overflow: visible;" >Live Broadcasts</div></div> -->
-								<div class="ci-tab-content-container item active" id="ci-live-broadcasts-content" >Live Broadcasts</div>
-								<div class="ci-tab-content-container item" id="ci-uploaded-content" >Uploaded</div>
-							</div>
-						</div>
+							<div class="content-sub-container" id="">
+								<!-- Start Live Broadcast Overlay -->
+								<div class="overlay-dialog-container" id="ci-start-live-broadcast-container">
+									<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >Live Broadcast</span></div>
+									<div class="overlay-divider" style="top: 7%;" ></div>
+									<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
+										<div class="textbox-container" id="ci-broadcast-title-container" >
+											<input class="textbox" id="ci-broadcast-title" type="text" placeholder="Live Broadcast Title" />
+										</div>
+										<button class="btn btn-small" id="btn-ci-create-broadcast" >Create Live Broadcast</button>
+										<div id="ci-broadcast-visibility-container">
+											<span>Visibility: </span>
+											<select>
+												<option>Public</option>
+												<option>All Connections</option>
+											</select>
+										</div>
+										<div class="textbox-container" id="ci-broadcast-desc-container" >
+											<textarea class="textbox" id="ci-broadcast-desc" placeholder = "Broadcast Description" 
+											style="text-align: center; padding: 0.1% 1% ! important; width: 98% ! important;" ></textarea>
+										</div>
+										<div id="ci-il-header" ><span>Invitation List: </span></div>
+										<button class="btn btn-mini" id="btn-ci-select-all" >Select All</button>
+										<button class="btn btn-mini" id="btn-ci-deselect-all" >Deselect All</button>
+										<div id="ci-main-connections-container">
+											<div class="textbox-container" id="ci-search-connections-container" >
+												<input class="textbox" id="ci-search-connections" type="text" placeholder="Search Connections" />
+											</div>
+											<div id="ci-connections-container">
+												<!-- <div class="ci-connection">
+													<div class="ci-connection-image-container" ></div>
+													<div class="ci-connection-name" >Sagar Jadhav</div>
+													<button class="btn btn-mini btn-ci-connection-add btn-ci-connection-action" >Send Invitation</button>
+												</div> -->
+											</div>										
+										</div>								
+									</div>
+								</div>
+							</div>	
 						</div>
 					</div> 
-
 				</div>
 			</section>
 		</div>

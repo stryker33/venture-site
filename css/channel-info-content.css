@@ -90,7 +90,7 @@
 {
 	position: absolute;
 	width: 100%;
-	height: 4.5%;
+	height: 4%;
 	bottom: 75%;
 	left: 0%;
 	font-size: 12.5px;
@@ -101,57 +101,138 @@
 
 #ci-channel-header span{position: absolute; right: 3%;}
 #ci-channel-header i{position: absolute; right: 1.5%; top: 25%;}
-#ci-tabs-content-container
+
+#btn-ci-start-live-broadcast, #btn-ci-upload-video{position: absolute; top: 25%;}
+#btn-ci-start-live-broadcast{right: 13%;}
+#btn-ci-upload-video{right: 3%;}
+
+#ci-start-live-broadcast-container
+{
+	position: fixed;
+	width: 999px;
+	height: 480px;
+	top: 140px !important;
+	left: 142.7px;
+	display: none;
+}
+
+#ci-broadcast-title-container
+{
+	position: absolute;
+	width: 30%;
+	height: auto;
+	top: 3%;
+	left: 3%;
+}
+
+#btn-ci-create-broadcast
+{
+	position: absolute;
+	width: 159px;
+	top: 3%;
+	left: 35%;
+}
+
+#ci-broadcast-visibility-container
+{
+	position: absolute;
+	width: 30%;
+	height: auto;
+	top: 11.5%;
+	left: 3%;
+	font-size: 11.5px;
+	font-weight: 700;
+}
+
+#ci-broadcast-desc-container
+{
+	position: absolute;
+	width: 48%;
+	height: 45%;
+	top: 21%;
+	left: 3%;
+}
+#ci-il-header
+{
+	position: absolute; 
+	top: 3%; 
+	left: 54%; 
+	font-size: 11.8px; 
+	font-weight: 700;
+}
+
+#btn-ci-select-all, #btn-ci-deselect-all
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 3%;
+}
+
+#btn-ci-select-all{right: 11.5%;}
+#btn-ci-deselect-all{right: 3%;}
+
+#ci-main-connections-container
+{
+	position: absolute;
+	width: 43%;
+	height: 85%;
+	top: 10%;
+	right: 3%;
+	border: solid 1px #000000;
+}
+
+#ci-search-connections-container
+{	
+	border: 0px;
+	border-radius: 0px !important;
+	border-bottom: solid 1px #000000;
+}
+
+#ci-connections-container
 {
 	position: absolute;
 	width: 100%;
-	height: 100%;
-	top: 0%;
+	height: 93%;
+	top: 7%;
 	left: 0%;
+	overflow: auto;
 }
 
-#ci-tabs-container
+.ci-connection
 {
-	position: absolute;
+	position: relative;
 	width: 100%;
-	height: 5%;
-	top: 0%;
-	left: 0%;
-}
-
-.ci-tab
-{
-	position: absolute;
-	width: 50%;
-	height: 100%;
+	height: 14%;
+	border-bottom: solid 1px #000000;
 	font-size: 11px;
 	font-weight: 700;
-	text-align: center;
 }
 
-.ci-tab-active{border-bottom: solid 3px #1E90FF;}
-.ci-tab:hover, .ci-tab-active:hover{cursor: pointer; border-bottom: solid 3px #1E90FF;}
-
-#ci-tab-live-broadcasts{left: 0%;}
-#ci-tab-uploaded{left: 50%;}
-
-.ci-carousel-container
+.ci-connection-image-container
 {
 	position: absolute;
-	width: 100%;
-	height: 95%;
-	top: 5%;
-	left: 0%;
+	width: 9.5%;
+	height: 80%;
+	top: 8%;
+	right: 3%;
+	border: solid 1px #000000;
 }
 
-.ci-tab-content-container
+.ci-connection-name
 {
 	position: absolute;
-	width: 100%;
+	width: auto;
 	height: auto;
-	min-height: 100%;
-	font-size: 25px;
-	font-weight: 700;
-	text-align: center;
-	overflow: auto;
+	top: 25%;
+	right: 15%;
+}
+
+.btn-ci-connection-action
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 25%;
+	left: 5%;
 }

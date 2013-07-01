@@ -25,6 +25,20 @@ $(document).ready(function(e){
 			return true;
 		e.preventDefault();
 	});
+
+	// Change the text-align for textbox on focusout and focusin 
+	$(document).on("focusin", "textarea.textbox", function(e){
+		$(this).css("text-align", "left");
+		$(this).css({"text-align": "left", "line-height": "normal"});
+	});
+
+	$(document).on("focusout", "textarea.textbox", function(e){
+		if($(this).val().length == 0)
+		{
+			$(this).css({"text-align": "center", "line-height": $(this).height().toString() + "px"});	
+		}
+		
+	});
 });
 
 // Capitalize the first letter

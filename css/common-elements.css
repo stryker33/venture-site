@@ -24,9 +24,10 @@
 .dialog-container-header-text:hover, .overlay-dialog-container-header-text:hover{cursor: pointer;}
 
 .textbox-container{border: solid 1px #000000; border-radius: 5px !important; -moz-border-radius: 5px !important; -webkit-border-radius: 5px !important; margin: 0px !important; padding-bottom: 3px !important;}
-.textbox{width: 100% !important; /*height: 100% !important; top: 0%; left: 0%;*/ border: 0px !important; border-radius: 5px !important; -moz-border-radius: 5px !important; -webkit-border-radius: 5px !important; font-size: 11px !important; font-weight: 700 !important; text-align: center !important;
+.textbox{width: 100% !important; /*height: 100% !important; top: 0%; left: 0%;*/ border: 0px !important; border-radius: 5px !important; -moz-border-radius: 5px !important; -webkit-border-radius: 5px !important; font-size: 11px !important; font-weight: 700 !important; text-align: center;
  padding: 0px !important; margin: 0px !important; outline: 0px none !important; 
- font-family: 'Ubuntu', 'Ubuntu Beta', UbuntuBeta, Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif !important;}
+ font-family: 'Ubuntu', 'Ubuntu Beta', UbuntuBeta, Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif !important; 
+ resize: none;}
  .textbox:focus{box-shadow: none !important;}
  .cap{text-transform: capitalize;}
 
