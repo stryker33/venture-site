@@ -6,6 +6,7 @@ $(document).ready(function(e){
 	contentRequest = $("#get-content").val();
 
 	$(".content-container").niceScroll();
+	$(".ci-tab-content-container").niceScroll();
 	$("#search-box").val("");
 	populatePage();
 

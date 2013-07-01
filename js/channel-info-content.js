@@ -25,6 +25,23 @@ $(document).ready(function(e){
 		// Pause the carousel from sliding
 		$("#ci-tabs-content-container").carousel("pause");
 	});
+
+	// Scroll handler
+	$(".content-container").on("scroll", function(e){
+		var containerHeight = $(".content-container").height();
+		var cContainerTop = containerHeight * 0.205;
+		console.log($(this).scrollTop() + " " + cContainerTop);
+		if($(this).scrollTop() >= cContainerTop)
+		{
+			$("#channel-info-container").hide();
+			$("#ci-channel-header").fadeIn("fast");
+		}
+		else
+		{
+			$("#channel-info-container").show();
+			$("#ci-channel-header").hide();	
+		}
+	})
 });
 
 function initChannelInfo()
@@ -37,6 +54,9 @@ function initChannelInfo()
 
 	// Pause the carousel from sliding
 	$("#ci-tabs-content-container").carousel("pause");
+
+	// Vertical align the text within channel-header
+	$("#ci-channel-header").css("line-height", $("#ci-channel-header").height().toString() + "px");
 }
 
 function populateChannelInfo(channelName)
@@ -50,6 +70,7 @@ function populateChannelInfo(channelName)
 	$("#ci-channel-name-container").text(channelSelected.channel_name);
 	$("#ci-channel-visibility-container").text(channelSelected.channel_visibility);
 	$("#ci-channel-desc-container").text(channelSelected.channel_desc);
+	$("#ci-channel-header span").text(channelSelected.channel_name);
 
 	displayContent("Channel Info");
 	initChannelInfo();

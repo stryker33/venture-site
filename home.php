@@ -83,6 +83,7 @@
 								<div class="nav-menu-element" id="connections-tab" ><!-- <div class="notification-count" >10</div> --><i class="icon-star icon-white" ></i> Connections</div>
 								<div class="nav-menu-element" id="channels-tab" ><i class="icon-film icon-white" ></i> Channels</div>
 								<div class="nav-menu-element" id="settings-tab" ><i class="icon-wrench icon-white" ></i> Settings</div>
+								<div class="nav-menu-element" id="settings-tab" ><i class="icon-globe icon-white" ></i> Notifications</div>
 							</div>
 						</div>
 						<div class="nav-menu-container sub-menu" id="profile-sub-menu" >
@@ -492,7 +493,7 @@
 					</div>
 
 					<!-- Channel Info Content -->
-					<div class="content-container" id="channel-info-content" >
+					<div class="content-container" id="channel-info-content">
 						<div id="channel-info-container" >
 							<div class="image-container" id="ci-channel-cover-container" ></div>
 							<div id="ci-channel-name-container" ></div>
@@ -513,7 +514,8 @@
 								</div>
 							</div>
 						</div>
-						<div id="channel-content-container">
+						<div id="ci-channel-header" ><i class="icon-film" ></i><span></span></div>
+						<div id="channel-content-container" style="height: 95.5%" >
 							<div id="ci-tabs-content-container" class="carousel slide">
 							<div id="ci-tabs-container" >
 								<div class="ci-tab ci-tab-active active" id="ci-tab-live-broadcasts" 
@@ -521,8 +523,8 @@
 								<div class="ci-tab" id="ci-tab-uploaded" 
 								data-target="#ci-tabs-content-container" data-slide-to="1" ><span>Uploaded</span></div>
 							</div>
-
 							<div class="ci-carousel-container carousel-inner" >
+								<!-- <div class="ci-tab-content-container item active" id="ci-live-broadcasts-content" ><div style="width: 100%; height: 10px; overflow: visible;" >Live Broadcasts</div></div> -->
 								<div class="ci-tab-content-container item active" id="ci-live-broadcasts-content" >Live Broadcasts</div>
 								<div class="ci-tab-content-container item" id="ci-uploaded-content" >Uploaded</div>
 							</div>
