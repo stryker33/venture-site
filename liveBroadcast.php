@@ -90,7 +90,43 @@
 
 					<!-- Broadcast Content -->
 					<div class="content-container" id="broadcast-content" style="display: block" >
-
+						<div id="broadcast-container" >
+							<div id="b-feed-container" >
+							</div>
+							<div id="b-desc-container" >
+								<div class="image-container" id="b-channel-cover-container"></div>
+								<div id="b-channel-name-container">Sample Channel</div>
+								<div id="b-owner-name-container"><a>Fernando Alonso</a></div>
+								<button class="btn btn-mini channel-subscribe" id="btn-channel-subscribe" ><i class="icon-ok-sign"></i> Subscribe</button>
+								<div id="b-ts-container">Broadcast started at 2 July, 2013 08:45 pm</div>
+							</div>
+						</div>
+						<div id="b-comments-container" >
+							<div id="b-comments-header" >Comments</div>
+							<div class="overlay-divider" style="top: 3.7%" ></div>
+							<div id="b-comments" >
+								<!-- <div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" style="background-color: #000000">
+								</div>
+								<div class="b-comment" >
+								</div>
+								<div class="b-comment" >
+								</div> -->
+							<div>
+						</div>
 					</div>
 				</div>
 			</section>

@@ -1,4 +1,4 @@
-var uid, rid, broadcastTitle;
+var uid, rid, brsoadcastTitle;
 var hostAddress = "localhost";
 $(document).ready(function(e){
 	uid = $("#get-uid").val();
@@ -6,8 +6,18 @@ $(document).ready(function(e){
 	broadcastTitle = $("#get-bt").val();
 	populatePage();
 
+	$("#b-comments").niceScroll();
+
 	$(".nav-menu-element").click(function(e){
 		window.location = "https://" + hostAddress + "/home.php?uid=" + uid + "&c=" + jQuery.trim($(this).text()).toLowerCase();
+	});
+
+	$("#btn-channel-subscribe").on("mouseenter", function(e){
+		if($(this).hasClass("channel-subscribe"))
+			$(this).addClass("btn-success").css("color", "#000000");
+	}).on("mouseleave", function(e){
+		if($(this).hasClass("channel-subscribe"))
+			$(this).removeClass("btn-success");
 	});
 });
 

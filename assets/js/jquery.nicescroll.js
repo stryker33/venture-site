@@ -1217,6 +1217,7 @@
           }
           
           self.onmousedown = function(e,hronly) {    
+            
             if (self.rail.drag&&self.rail.drag.pt!=1) return;
             if (self.locked) return self.cancelEvent(e);            
             self.cancelScroll();              

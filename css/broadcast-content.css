@@ -1,0 +1,104 @@
+#broadcast-container
+{
+	position: absolute;
+	width: 70%;
+	height: auto;
+	min-height: 99.7%;
+	top: 0%;
+	right: 0%;
+	overflow: hidden;
+	border-left: solid 1px #000000;
+}
+
+#b-feed-container, #b-desc-container
+{
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+#b-feed-container{height: 62%; top: 0%;}
+#b-desc-container{height: 18%; top: 62%; font-weight: 700;}
+#b-comments-container
+{
+	position: absolute;
+	width: 30%;
+	height: 97.5%; 
+	top: 0%;
+	left: 0%;
+	padding: 10px 0px;
+}
+
+#b-comments-header
+{
+	position: absolute;
+	width: 95%;
+	height: auto;
+	top: 0%;
+	right: 0%;
+	font-size: 12.5px;
+	font-weight: 700;
+	padding: 1% 0px;
+	padding-right: 4.4%;
+	text-align: right;
+}
+
+#b-comments
+{
+	position: absolute;
+	width: 99.6%;
+	height: 96.3%;
+	top: 3.6%;
+	left: 0%;
+	overflow-y: hidden;
+}
+
+.b-comment
+{
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding: 1px 0px;
+}
+
+#b-channel-cover-container
+{
+	position: absolute;
+	width: 9%;
+	height: 50%;
+	top: 10%;
+	right: 5%;
+}
+
+#b-channel-name-container
+{
+	position: absolute;
+	top: 13%;
+	right: 15%;
+	font-size: 11.8px;
+}
+
+#b-owner-name-container
+{
+	position: absolute;
+	top: 23%;
+	right: 15%;
+	font-size: 9px;
+	font-weight: 500;
+}
+
+#btn-channel-subscribe
+{
+	position: absolute;
+	top: 38%;
+	right: 15%;
+}
+
+#b-ts-container
+{
+	position: absolute;
+	top: 13%;
+	left: 3%;
+	font-size: 11px;
+}
