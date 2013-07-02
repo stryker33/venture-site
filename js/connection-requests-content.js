@@ -15,6 +15,7 @@ $(document).ready(function(e){
 																									.text("Connected");
 					$(".cr-user-container[uid='" + from_user + "']").delay(1000).fadeOut("500", function(e){
 						$(".cr-user-container[uid='" + from_user + "']").remove();
+						loadConnections();
 					});
 				}
 			}

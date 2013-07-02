@@ -30,7 +30,6 @@
 		<script type="text/javascript" src="/js/home-util.js" ></script>
 		<script type="text/javascript" src="/js/common-js.js" ></script>
 		<script type="text/javascript" src="/js/nav-menu-base.js" ></script>
-		<script type="text/javascript" src="/js/home-content.js" ></script>
 		<script type="text/javascript" src="/js/search-content.js" ></script>
 		<script type="text/javascript" src="/js/profile-content.js" ></script>
 		<script type="text/javascript" src="/js/edit-profile-content.js" ></script>

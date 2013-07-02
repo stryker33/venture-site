@@ -190,12 +190,13 @@ $(document).ready(function(e){
 		connectionGroup["old_group_name"] = $(this).parent().parent().attr("old_group_name");
 		connectionGroup["new_group_name"] = jQuery.trim($("#cg-edit-group-name").val());
 
-		if(groupNameExists(connectionGroup["new_group_name"]))
+		if(groupNameExists(connectionGroup["new_group_name"], connectionGroup["old_group_name"]))
 		{
-			displayMessage("Connection Group with the same name already exists");
+			displayMessage("error", "Connection Group with the same name already exists");
 			return;
 		}
 		
+
 		connectionGroup["group_members"] = new Array();		
 
 		$.each($(".cg-edit-cg-connection"), function(e){
@@ -431,12 +432,12 @@ function populateEditCGContainer(position)
 	});
 }
 
-function groupNameExists(groupName)
+function groupNameExists(groupName, oldGroupName)
 {
 	var exists = false;
 	var cg = jQuery.parseJSON(connectionGroups);
 	$.each(cg.groups, function(index, connectionGroup){
-		if(connectionGroup.group_name == groupName)
+		if(connectionGroup.group_name == groupName && connectionGroup.group_name != oldGroupName)
 		{
 			exists = true;
 			return;
@@ -449,6 +450,21 @@ function groupNameExists(groupName)
 // loads the Connection Groups within the selectors
 function loadCGAsOption()
 {
+	$.each($("#c-new-channel-visibility-select select option").get(), function(index, value){
+		if(index > 1)
+			$(value).remove();
+	});
+
+	$.each($("#c-edit-channel-visibility-select select option").get(), function(index, value){
+		if(index > 1)
+			$(value).remove();
+	});
+	
+	$.each($("#ci-broadcast-visibility-container select option").get(), function(index, value){
+		if(index > 1)
+			$(value).remove();
+	});
+	
 	var cg = jQuery.parseJSON(connectionGroups);
 	$.each(cg.groups, function(index, connectionGroup){
 		$("#c-new-channel-visibility-select select").append("<option>" + connectionGroup.group_name + "</option>");

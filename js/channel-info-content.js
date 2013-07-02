@@ -21,7 +21,6 @@ $(document).ready(function(e){
 	$(".content-container").on("scroll", function(e){
 		var containerHeight = $(".content-container").height();
 		var cContainerTop = containerHeight * 0.21;
-		console.log($(this).scrollTop() + " " + cContainerTop);
 		if($(this).scrollTop() >= cContainerTop)
 		{
 			$("#channel-info-container").hide();
@@ -40,7 +39,6 @@ $(document).ready(function(e){
 		{
 			$.each($(".ci-connection").get(), function(index, connectionContainer){
 				var btn = $(connectionContainer).children("button");
-				console.log($(btn).text());
 				if($(btn).text() == "Send Invitation")
 				{
 					$(btn).removeClass("btn-ci-connection-invite").addClass("btn-ci-connection-cancel-invite").addClass("btn-success");
@@ -55,7 +53,6 @@ $(document).ready(function(e){
 		{
 			$.each($(".ci-connection").get(), function(index, connectionContainer){
 				var btn = $(connectionContainer).children("button");
-				console.log($(btn).text());
 				if($(btn).text() == "Cancel Invitation")
 				{
 					$(btn).removeClass("btn-ci-connection-cancel-invite").addClass("btn-ci-connection-invite").addClass("btn-danger");
@@ -116,6 +113,52 @@ $(document).ready(function(e){
 		var context = $(this).val();
 		populateBroadcastContainer(context);
 	});
+
+	// Click handler for btn-ci-create-broadcast
+	$(document).on("click", "#btn-ci-create-broadcast", function(e){
+		var broadcastTitle = jQuery.trim($("#ci-broadcast-title").val());
+
+		if(broadcastTitle == "")
+		{
+			displayMessage("error", "Broadcast Title cannot be empty");
+			return;
+		}
+
+		var liveBroadcastDetails = {}, invitationsList = {};
+		invitationsList["invitees"] = new Array();
+		
+		liveBroadcastDetails["channelOwnerUID"] = uid;
+		liveBroadcastDetails["channelName"] = $("#ci-channel-name-container").text();
+		liveBroadcastDetails["broadcastTitle"] = broadcastTitle;
+		liveBroadcastDetails["broadcastVisibility"] = jQuery.trim($("#ci-broadcast-visibility-container select").val());
+		liveBroadcastDetails["broadcastDesc"] = jQuery.trim($("#ci-broadcast-desc").val());
+		liveBroadcastDetails["videoType"] = "live_broadcast";
+		liveBroadcastDetails["broadcastMedium"] = "web_interface";
+
+		$.each($(".ci-connection").get(), function(index, connectionContainer){
+			var btn = $(connectionContainer).children("button");
+			if($(btn).hasClass("btn-ci-connection-cancel-invite"))
+				invitationsList["invitees"].push($(connectionContainer).attr("uid"));
+		});
+
+		$.ajaxq("channelInfoQueue", {
+			url: "/php/newLiveBroadcast.php",
+			type: "GET",
+			data: {lbd: liveBroadcastDetails, il: invitationsList},
+			success: function(data){
+				var response = jQuery.parseJSON(data);
+				if(response["message"] == "broadcast_created")
+				{
+					$("#btn-ci-create-broadcast").addClass("btn-success").text("Live Broadcast Created");
+					setTimeout(function(e){
+						$("#btn-ci-create-broadcast").removeClass("btn-success").text("Create Live Broadcast");
+						window.location = "https://" + hostAddress + "/liveBroadcast.php?uid=" + uid + "&rid=" + response["rid"] + "&bt=" + 
+																														liveBroadcastDetails["broadcastTitle"];
+					}, 1000);
+				}
+			}
+		})
+	});
 });
 
 function initChannelInfo()
@@ -161,7 +204,7 @@ function populateBroadcastContainer(context)
 		});	
 		return;
 	}
-
+	
 	var groupMembers = {};
 	var cg = jQuery.parseJSON(connectionGroups);
 	$.each(cg.groups, function(index, connectionGroup){
@@ -170,7 +213,6 @@ function populateBroadcastContainer(context)
 	});
 
 	$.each(connections, function(index, connection){
-		console.log(jQuery.inArray(connection.user.uid, groupMembers) != -1);
 		if(jQuery.inArray(connection.user.uid, groupMembers) != -1)
 		{
 			var connectionContainer = "<div class='ci-connection' uid=" + connection.user.uid + " >" + 

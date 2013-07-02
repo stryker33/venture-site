@@ -1,4 +1,5 @@
 var uid, contentRequest, userInfo, notifications, connections, connection_requests, connectionGroups, channels;
+var hostAddress = "localhost";
 var fadeDelay = 500;
 
 $(document).ready(function(e){
