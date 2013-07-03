@@ -1,10 +1,31 @@
 $(document).ready(function(e){
+	initCILayout();
+
 	// Init the start-broadcast-container overlay
-	$("#btn-ci-start-live-broadcast").overlay({
+	/*$("#btn-ci-start-live-broadcast").overlay({
 		onBeforeLoad: function(e){
 			$("#ci-broadcast-desc").css("line-height", "201px");
 		},
-	});
+	});*/
+
+	$("#btn-ci-start-live-broadcast").overlay({
+		onLoad: function(e){
+			$("#lb-comments-header").css("line-height", $("#lb-comments-header").height().toString() + "px");
+			$("#btn-lb-start-broadcast").css("line-height", $("#btn-lb-start-broadcast").height().toString() + "px");
+			$("#btn-lb-capture").css("line-height", $("#btn-lb-capture").height().toString() + "px");
+			$("#btn-lb-screencast").css("line-height", $("#btn-lb-screencast").height().toString() + "px");
+			$("#btn-lb-switch-camera").css("line-height", $("#btn-lb-switch-camera").height().toString() + "px");
+			$("#btn-lb-switch-screen").css("line-height", $("#btn-lb-switch-screen").height().toString() + "px");
+
+			$("#lb-comments-container").css('visibility', 'visible');
+			$("#lb-main-broadcast-container").css('visibility', 'visible');
+		},
+		mask:{
+			color: '#CCE0FF',
+			loadSpeed: 200,
+			opacity: 0.55
+		}
+	});	
 
 	$(document).on("click", "#ci-channel-view-options-container li", function(e){
 		var text = $(this).text();
@@ -152,8 +173,9 @@ $(document).ready(function(e){
 					$("#btn-ci-create-broadcast").addClass("btn-success").text("Live Broadcast Created");
 					setTimeout(function(e){
 						$("#btn-ci-create-broadcast").removeClass("btn-success").text("Create Live Broadcast");
-						window.location = "https://" + hostAddress + "/liveBroadcast.php?uid=" + uid + "&rid=" + response["rid"] + "&bt=" + 
-																														liveBroadcastDetails["broadcastTitle"];
+						//window.location = "https://" + hostAddress + "/liveBroadcast.php?uid=" + uid + "&rid=" + response["rid"] + "&bt=" + 
+						//																								liveBroadcastDetails["broadcastTitle"];
+
 					}, 1000);
 				}
 			}
@@ -225,3 +247,20 @@ function populateBroadcastContainer(context)
 		}
 	});
 }
+
+
+function initCILayout()
+{
+	initCBLiveBrodcastLayout();
+}
+
+function initCBLiveBrodcastLayout()
+{
+	$("#ci-live-broadcast-container").css({
+		"width": (windowWidth * 0.9).toString() + "px",
+		"height": (windowHeight * 0.97).toString() + "px",
+		"top": (windowWidth * 0.01).toString() + "px !important",
+		"left": (windowHeight * 0.05).toString() + "px !important",
+	})
+}
+

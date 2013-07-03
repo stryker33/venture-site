@@ -1,8 +1,11 @@
 var uid, contentRequest, userInfo, notifications, connections, connection_requests, connectionGroups, channels;
 var hostAddress = "localhost";
 var fadeDelay = 500;
+var windowWidth, windowHeight;
 
 $(document).ready(function(e){
+	windowWidth = $(".wrapper").width();
+	windowHeight = $(".wrapper").height();
 	uid = $("#get-uid").val();
 	contentRequest = $("#get-content").val();
 

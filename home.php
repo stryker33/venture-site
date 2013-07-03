@@ -522,7 +522,7 @@
 									</div>
 									<div class="search-icon-container"><i class="icon-search" ></i></div>
 								</div>
-								<button class="btn btn-mini" id="btn-ci-start-live-broadcast" rel="#ci-start-live-broadcast-container" ><icon class="icon-facetime-video" ></icon> Start Live Broadcast</button>
+								<button class="btn btn-mini" id="btn-ci-start-live-broadcast" rel="#ci-live-broadcast-container" ><icon class="icon-facetime-video" ></icon> Start Live Broadcast</button>
 								<button class="btn btn-mini" id="btn-ci-upload-video" rel="#ci-upload-video-container" ><icon class="icon-upload" ></icon> Upload Video</button>
 							</div>
 							<div class="content-sub-container" id="">
@@ -561,6 +561,29 @@
 												</div> -->
 											</div>										
 										</div>								
+									</div>
+								</div>
+
+								<!-- Live Broadcast Overlay -->
+								<div id="ci-live-broadcast-container">
+									<div id="lb-comments-container">
+										<div id="lb-comments-header">Comments</div>
+										<div class="overlay-divider" style="top: 3.5%" ></div>
+										<div id="lb-comments"></div>
+									</div>
+									<div id="lb-main-broadcast-container">
+										<div id="lb-broadcast-container"></div>
+										<div id="lb-broadcast-options-container">
+											<div class="lb-start-broadcast" id="btn-lb-start-broadcast" ><i class="icon-play" ></i> Start the Broadcast</div>
+											<div id="btn-lb-capture" ><i class="icon-camera" ></i> Capture</div>
+											<div id="btn-lb-screencast" ><i class="icon-screenshot" ></i> Screencast</div>
+											<div id="btn-lb-switch-camera" ><i class="icon-refresh" ></i><i class="icon-camera" ></i> Switch Camera</div>
+											<div id="btn-lb-switch-screen" ><i class="icon-refresh" ></i><i class="icon-screenshot" ></i> Switch Screen</div>
+										</div>
+										<div id="lb-broadcast-desc-container">
+											<div id="lb-broadcast-title" >Sample Live Broadcast</div>
+											<div id="lb-channel-name" >Sample Channel</div>
+										</div>
 									</div>
 								</div>
 							</div>	

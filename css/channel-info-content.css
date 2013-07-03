@@ -236,3 +236,117 @@
 	top: 25%;
 	left: 5%;
 }
+
+#ci-live-broadcast-container
+{
+	width: 90%;
+	height: 98%;
+	top: 1% !important;
+	left: 5%;
+	border: solid 1px #000000;
+	display: none;
+	z-index: 10000;
+	background-color: #FFFFFF;
+}
+
+#lb-comments-container
+{
+	position: absolute;
+	width: 30%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	font-weight: 500;
+	border-right: solid 1px #000000;
+	visibility: hidden;
+}
+
+#lb-comments-header
+{
+	position: absolute;
+	width: 97%;
+	height: 3.5%;
+	font-size: 12px;
+	font-weight: 700;
+	text-align: right;
+	padding: 1px 0px;
+	padding-right: 3%;
+}
+
+#lb-comments
+{
+	position: absolute;
+	width: 100%;
+	height: 96.5%;
+	top: 3.5%;
+	left: 0%;
+	
+}
+
+#lb-main-broadcast-container
+{
+	position: absolute;
+	width: 70%;
+	height: 100%;
+	top: 0%;
+	left: 30%;
+	visibility: hidden;
+}
+
+#lb-broadcast-container
+{
+	position: absolute;
+	width: 100%;
+	height: 70%;
+	top: 0%;
+	left: 0%;
+	border-bottom: solid 2px #000000;
+}
+
+#lb-broadcast-options-container
+{
+	position: absolute;
+	width: 99.9%;
+	height: 10%;
+	top: 70%;
+	left: 0%;
+	font-weight: 700;
+	border-bottom: solid 1px #000000;
+}
+
+#lb-broadcast-desc-container
+{
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	top:80%;
+	left: 0%;
+	font-weight: 500;
+}
+
+#btn-lb-start-broadcast, #btn-lb-capture, #btn-lb-screencast, #btn-lb-switch-camera, #btn-lb-switch-screen
+{
+	position: absolute;
+	font-size: 10.5px;
+	text-align: center;
+	background-color: #E0ECFF;
+	border: solid 1px #000000;
+	box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.2) inset, 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+#btn-lb-start-broadcast:hover, #btn-lb-capture:hover, #btn-lb-screencast:hover, #btn-lb-switch-camera:hover, #btn-lb-switch-screen:hover{cursor: pointer;}
+.lb-start-broadcast#btn-lb-start-broadcast:hover{background-color: #E0FF85;}
+#btn-lb-capture:hover, #btn-lb-screencast:hover, #btn-lb-switch-camera:hover, #btn-lb-switch-screen:hover{background-color: #70AAFF;}
+#btn-lb-start-broadcast{width: 49.9%; height: 100%; top: 0%; left: 0%;}
+#btn-lb-capture{width: 25%; height: 50%; top: 0%; left: 50%;}
+#btn-lb-screencast{width: 25%; height: 50%; top: 0%; left: 75%; border-right: none;}
+#btn-lb-switch-camera{width: 25%; height: 50%; top: 50%; left: 50%;}
+#btn-lb-switch-screen{width: 25%; height: 50%; top: 50%; left: 75%; border-right: none;}
+
+#lb-broadcast-title, #lb-channel-name
+{
+	position: absolute;
+	right: 5%;
+}
+
+#lb-broadcast-title{top: 10%; font-size: 15.5px; font-weight: 700;}
+#lb-channel-name{top: 21%; font-size: 11px;}
