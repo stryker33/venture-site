@@ -110,7 +110,7 @@ function loadConnectionRequests()
 function buildConnectionRequestUser(cr_user)
 {
 	var conn_request_user = "<div class='user-container cr-user-container' uid='" + cr_user.user.user.uid+ "'>" + 
-							"<div class='uc-profile-image-container cr-profile-image-container' style='background-image: url(" + cr_user.user.user.profile_image + ")'>" + 
+							"<div class='image-container uc-profile-image-container cr-profile-image-container' style='background-image: url(" + cr_user.user.user.profile_image + ")'>" + 
 							"</div>" + 
 							"<div class='uc-user-info-container cr-user-info-container' >" + 
 								"<div class='uc-user-name-container cr-user-name-container' >" + cr_user.user.user.first_name + " " + cr_user.user.user.last_name + "</div>" + 

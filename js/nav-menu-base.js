@@ -57,7 +57,6 @@ $(document).ready(function(e){
 			if($(this).attr("id") == "connection-requests-tab")
 				connectionRequestsSeen(); // connection-requests-content.js
 		}
-			
 	});
 
 	// Handle main-menu-control click
@@ -147,6 +146,7 @@ function displayMenu(subMenu)
 	}
 
 	animateMenu();
+	resizeImageContainers();
 }
 
 function displayContent(content)
@@ -183,6 +183,7 @@ function displayContent(content)
 		case "Channel Info": $("#channel-info-content").fadeIn().removeClass("content-container").addClass("content-container-active");
 					   		 break;
 	}
+	resizeImageContainers();
 }
 
 function generateNotificationsIndicator()

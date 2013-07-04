@@ -1,4 +1,5 @@
 $(document).ready(function(e){
+	
 	// Only allow the entry of alphabets for class "alpha"
 	$(".alpha").on("keypress", function(event) {
 		console.log("alpha-keypress invoked");

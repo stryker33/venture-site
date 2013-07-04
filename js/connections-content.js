@@ -79,7 +79,7 @@ function loadConnectionsInfo()
 function buildConnectedUser(c_user)
 {
 	var conn_request_user = "<div class='user-container c-user-container' uid='" + c_user.user.uid+ "'>" + 
-							"<div class='uc-profile-image-container c-profile-image-container' style='background-image: url(" + c_user.user.profile_image + ")'>" + 
+							"<div class='image-container uc-profile-image-container c-profile-image-container' style='background-image: url(" + c_user.user.profile_image + ")'>" + 
 							"</div>" + 
 							"<div class='uc-user-info-container c-user-info-container' >" + 
 								"<div class='uc-user-name-container c-user-name-container' >" + c_user.user.first_name + " " + c_user.user.last_name + "</div>" + 

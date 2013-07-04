@@ -30,13 +30,14 @@ function populateSearchContent(searchResult)
 	$(".sc-user-container").remove();
 	$.each(searchResult, function(index, value){
 		$(buildSearchResultUser(value)).hide().appendTo("#search-content").fadeIn("fast");
+		resizeImageContainers();
 	});
 }
 
 function buildSearchResultUser(searchUserInfo)
 {
 	var scUserContainer = "<div class='user-container sc-user-container' uid=" + searchUserInfo.uid + ">" + 
-							"<div class='uc-profile-image-container sc-profile-image-container' style='background-image: url(" + searchUserInfo.profile_image + ")'>" + 
+							"<div class='image-container uc-profile-image-container sc-profile-image-container' style='background-image: url(" + searchUserInfo.profile_image + ")'>" + 
 							"</div>" + 
 							"<div class='uc-user-info-container sc-user-info-container' >" + 
 								"<div class='uc-user-name-container sc-user-name-container' >" + searchUserInfo.first_name + " " + searchUserInfo.last_name + "</div>" + 

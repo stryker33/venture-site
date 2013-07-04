@@ -56,15 +56,16 @@
 		<div class="wrapper" >
 			<section>
 				<div id="banner-container" >
-					<div id="logo-container">contineo</div>
 					<div id="content-desc-header">Home</div>
+					<div class="textbox-container" id="search-box-container" style="background: transparent; border: 0px !important;">
+						<input class="textbox" id="search-box" type="text" placeholder="Search Profiles and Channels" style="position: absolute; box-shadow: none !important; background: transparent;" />
+					</div>
 					<div id="user-info-container" >
 						<!-- <div id="user-profile-image-container" ><img id="user-profile-image" /></div> -->
 						<div id="username"></div>
 					</div>
-					<div class="textbox-container" id="search-box-container" style="background: transparent; border: 0px !important;">
-						<input class="textbox" id="search-box" type="text" placeholder="Search Profiles and Channels" style="box-shadow: none !important; background: transparent;" />
-					</div>
+					<div id="logo-container">contineo</div>
+					<div id="navmenu-control-container" ><i class="icon-chevron-left" ></i><i class="icon-list" ></i></div>
 				</div>
 			</section>
 			<section>
@@ -121,13 +122,13 @@
 					<div class="alert" id="message-container" ></div>
 
 					<!-- Home Content -->
-					<div class="content-container-active" id="home-content" >
+					<div class="content-container" id="home-content" >
 					</div>
 					
 					<!-- Profile Content -->
 					<div class="content-container" id="profile-content" >
 						<div id="profile-banner-container" >
-							<div id="profile-image-container" >
+							<div class="image-container" id="profile-image-container" >
 							</div>
 							<div id="profile-info-container" >
 								<div id="name-info-container" ></div>
@@ -150,8 +151,8 @@
 					</div>
 
 					<!-- Edit Profile Content -->
-					<div class="content-container" id="edit-profile-content" >
-						<div id="ep-image-container" >
+					<div class="content-container-active" id="edit-profile-content" >
+						<div class="image-container" id="ep-image-container" >
 							<div id="ep-change-image-container"><span>Change Profile Image</span></div>
 							<input id="ep-profile-image-selector" type="file" name="profile-image" style="display: none;" />
 						</div>
