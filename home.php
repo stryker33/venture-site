@@ -122,7 +122,7 @@
 					<div class="alert" id="message-container" ></div>
 
 					<!-- Home Content -->
-					<div class="content-container" id="home-content" >
+					<div class="content-container-active" id="home-content" >
 					</div>
 					
 					<!-- Profile Content -->
@@ -151,7 +151,7 @@
 					</div>
 
 					<!-- Edit Profile Content -->
-					<div class="content-container-active" id="edit-profile-content" >
+					<div class="content-container" id="edit-profile-content" >
 						<div class="image-container" id="ep-image-container" >
 							<div id="ep-change-image-container"><span>Change Profile Image</span></div>
 							<input id="ep-profile-image-selector" type="file" name="profile-image" style="display: none;" />
