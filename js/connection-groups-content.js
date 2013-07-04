@@ -2,10 +2,30 @@ var newConnectionGroup;
 
 $(document).ready(function(e){
 	// Init the new-cg-container overlay
-	$("#btn-cg-create-new-cg").overlay({fixed: false});
+	$("#btn-cg-create-new-cg").overlay({
+		fixed: false,
+		mask:{
+			color: '#CCE0FF',
+			loadSpeed: 200,
+			opacity: 0.55
+		},
+		onLoad: function(e){
+			resizeImageContainers();
+		}
+	});
 
 	// Init the edit-cg-container overlay
-	$("#cg-edit-cg-container").overlay({fixed: false});
+	$("#cg-edit-cg-container").overlay({
+		fixed: false,
+		mask:{
+			color: '#CCE0FF',
+			loadSpeed: 200,
+			opacity: 0.55
+		},
+		onLoad: function(e){
+			resizeImageContainers();
+		}
+	});
 
 	$("#btn-cg-create-new-cg").on("click", function(e){
 		populateNewCGContainer(); 

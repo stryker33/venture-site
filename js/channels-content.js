@@ -1,10 +1,30 @@
 $(document).ready(function(e){
 
 	// Init the c-new-channel-container overlay
-	$("#btn-c-create-new-channel").overlay({fixed: false});
+	$("#btn-c-create-new-channel").overlay({
+		fixed: false,
+		mask:{
+			color: '#CCE0FF',
+			loadSpeed: 200,
+			opacity: 0.55
+		},
+		onLoad: function(e){
+			resizeImageContainers();
+		}
+	});
 
 	// Init the c-edit-channel-container overlay
-	$(".btn-c-channel-edit").overlay({fixed: false});
+	$(".btn-c-channel-edit").overlay({
+		fixed: false,
+		mask:{
+			color: '#CCE0FF',
+			loadSpeed: 200,
+			opacity: 0.55
+		},
+		onLoad: function(e){
+			resizeImageContainers();
+		}
+	});
 
 	// Click handler for btn-c-new-channel-create
 	$(document).on("click", "#btn-c-new-channel-create", function(e){

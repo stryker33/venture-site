@@ -93,8 +93,7 @@ function initHomeLayout()
 
 function resizeImageContainers()
 {
-	$.each($(".image-container").get(), function(index, imageContainer){
-		console.log($(imageContainer));
+	$.each($(".image-container:visible").get(), function(index, imageContainer){
 		$(imageContainer).width($(imageContainer).height());
 	});
 }
