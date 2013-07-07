@@ -19,10 +19,12 @@
 		<script src="/assets/js/autobahn.min.js"></script>
 		<script type="text/javascript" src="/assets/js/jquery.fileupload.js"  ></script>
 		<script type="text/javascript" src="/assets/js/jquery.nicescroll.js"  ></script>
+		<script type="text/javascript" src="/assets/js/jquery.tipsy.js"  ></script>
 
 		<link href="/assets/css/ubuntu-font/ubuntu-font.css" rel="stylesheet" type="text/css" >
 		<link href="/assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css" >
 		<link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+		<link href="/assets/css/tipsy.css" rel="stylesheet" type="text/css" >
 
 		<link href="/css/common-elements.css" rel="stylesheet" type="text/css" >
 
@@ -56,25 +58,25 @@
 		<div class="wrapper" >
 			<section>
 				<div id="banner-container" >
-					<div id="content-desc-header">Home</div>
-					<div class="textbox-container" id="search-box-container" style="background: transparent; border: 0px !important;">
+					<div id="content-desc-header" title="Home" tip-gravity="ns" >Home</div>
+					<div class="textbox-container" id="search-box-container" style="background: transparent; border: 0px !important;" >
 						<input class="textbox" id="search-box" type="text" placeholder="Search Profiles and Channels" style="position: absolute; box-shadow: none !important; background: transparent;" />
 					</div>
 					<div id="user-info-container" >
 						<!-- <div id="user-profile-image-container" ><img id="user-profile-image" /></div> -->
-						<div id="username"></div>
+						<div id="username" title="Fernando Alonso" tip-gravity="ns" ></div>
 					</div>
-					<div id="logo-container">contineo</div>
-					<div id="navmenu-control-container" ><i class="icon-chevron-left" ></i><i class="icon-list" ></i></div>
+					<div id="logo-container" >contineo</div>
+					<div id="navmenu-control-container" tip-gravity="ne" ><i class="icon-chevron-left" ></i><i class="icon-list" ></i></div>
 				</div>
 			</section>
 			<section>
 				<div id="navbar-container" >
 					<div id="nav-container" >
 						<div class="access-controls-container" >
-							<div id="back-control-container" ><i class="icon-arrow-left icon-white"></i></div>
+							<div id="back-control-container" title="Back" tip-gravity="n" ><i class="icon-arrow-left icon-white"></i></div>
 							<div id="sub-menu-header" ></div>
-							<div id="main-menu-control-container" ><i class="icon-list icon-white"></i></div>
+							<div id="main-menu-control-container" title="Jump to the Main Menu" tip-gravity="ne" ><i class="icon-list icon-white"></i></div>
 						</div>
 						<div class="nav-menu-container-active" id="main-menu" >
 							<div class="nav-menu">

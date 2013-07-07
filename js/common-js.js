@@ -1,5 +1,16 @@
 $(document).ready(function(e){
 	
+	// Init the tooltip
+	$("div, span, button").tipsy({gravity: function(){
+		var tipGravity = $(this).attr("tip-gravity");
+		if(tipGravity == "ns")
+			return $(this).offset().top > ($(document).scrollTop() + $(window).height() / 2) ? 's' : 'n';	
+		if(tipGravity == "we")
+			return $(this).offset().left > ($(document).scrollLeft() + $(window).width() / 2) ? 'e' : 'w';
+		
+		return tipGravity;
+	}});
+
 	// Only allow the entry of alphabets for class "alpha"
 	$(".alpha").on("keypress", function(event) {
 		console.log("alpha-keypress invoked");
