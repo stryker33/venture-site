@@ -102,7 +102,36 @@
 #ci-channel-header span{position: absolute; right: 3%;}
 #ci-channel-header i{position: absolute; right: 1.5%; top: 25%;}
 
-#btn-ci-start-live-broadcast, #btn-ci-upload-video{position: absolute; top: 25%;}
+.channel-content-sub-container
+{
+	position: relative;
+	width: 100%;
+	height: 97%;
+	display: none;
+}
+
+#ci-tab-header-container
+{
+	position: relative;
+	width: 100%;
+	height: 3%;
+}
+
+.ci-tab-header
+{
+	position: relative;
+	width: auto;
+	height: 100%;
+	float: right;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 0px 0.8%;
+}
+
+.ci-tab-header-active{border-bottom: solid 3px #1E90FF; }
+.ci-tab-header:hover{cursor: pointer; }
+
+#btn-ci-start-live-broadcast, #btn-ci-upload-video{position: absolute; top: 18%;}
 #btn-ci-start-live-broadcast{right: 13%;}
 #btn-ci-upload-video{right: 3%;}
 

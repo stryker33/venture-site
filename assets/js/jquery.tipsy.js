@@ -43,7 +43,7 @@
                     gravity = maybeCall(this.options.gravity, this.$element[0]);
                 
                 var tp;
-                console.log(gravity);
+
                 switch (gravity.charAt(0)) {
                     case 'n':
                         tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};

@@ -7,7 +7,7 @@
 		$connRequest = array();
 		$connRequest["uid"] = $to;
 		$connRequest["notificationType"] = "connRequest";
-		$connRequest["from"] = getUserInfo($from);
+		$connRequest["from"]["user"] = getUserInfo($from);
 		
 		$context = new ZMQContext();
 		$socket = $context->getSocket(ZMQ::SOCKET_PUSH, "connRequest");

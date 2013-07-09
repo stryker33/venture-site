@@ -66,7 +66,7 @@
 						<!-- <div id="user-profile-image-container" ><img id="user-profile-image" /></div> -->
 						<div id="username" title="Fernando Alonso" tip-gravity="ns" ></div>
 					</div>
-					<div id="logo-container" >contineo</div>
+					<div id="logo-container" title="Contineo Home" tip-gravity="ns" >contineo</div>
 					<div id="navmenu-control-container" tip-gravity="ne" ><i class="icon-chevron-left" ></i><i class="icon-list" ></i></div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 					<div id="nav-container" >
 						<div class="access-controls-container" >
 							<div id="back-control-container" title="Back" tip-gravity="n" ><i class="icon-arrow-left icon-white"></i></div>
-							<div id="sub-menu-header" ></div>
+							<div id="sub-menu-header" tip-gravity="ns" ></div>
 							<div id="main-menu-control-container" title="Jump to the Main Menu" tip-gravity="ne" ><i class="icon-list icon-white"></i></div>
 						</div>
 						<div class="nav-menu-container-active" id="main-menu" >
@@ -518,78 +518,91 @@
 						</div>
 						<div id="ci-channel-header" ><i class="icon-film" ></i><span></span></div>
 						<div id="channel-content-container" style="height: 96%;" >
-							<div class="filters-container">
-								<div class="search-container" id="search-videos" style="top: 24%">
-									<div class="textbox-container" id="search-videos-text-container">
-										<input class="textbox" id="search-videos" type="text" placeholder="Search Channel" />
-									</div>
-									<div class="search-icon-container"><i class="icon-search" ></i></div>
-								</div>
-								<button class="btn btn-mini" id="btn-ci-start-live-broadcast" rel="#ci-live-broadcast-container" ><icon class="icon-facetime-video" ></icon> Start Live Broadcast</button>
-								<button class="btn btn-mini" id="btn-ci-upload-video" rel="#ci-upload-video-container" ><icon class="icon-upload" ></icon> Upload Video</button>
+							<div id="ci-tab-header-container" >
+								<div class="ci-tab-header" id="ci-desc-tab" >Description</div>
+								<div class="ci-tab-header" id="ci-comments-tab" >Comments</div>
+								<div class="ci-tab-header ci-tab-header-active" id="ci-videos-tab" >Videos</div>
 							</div>
-							<div class="content-sub-container" id="">
-								<!-- Start Live Broadcast Overlay -->
-								<div class="overlay-dialog-container" id="ci-start-live-broadcast-container">
-									<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >Live Broadcast</span></div>
-									<div class="overlay-divider" style="top: 7%;" ></div>
-									<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
-										<div class="textbox-container" id="ci-broadcast-title-container" >
-											<input class="textbox" id="ci-broadcast-title" type="text" placeholder="Live Broadcast Title" />
+							<div class="channel-content-sub-container channel-content-sub-container-active" id="ci-videos-container" style="display: block" >
+								<div class="filters-container" style="height: 5%">
+									<div class="search-container" id="search-videos" style="top: 18%">
+	  									<div class="textbox-container" id="search-videos-text-container">
+					 						<input class="textbox" id="search-videos" type="text" placeholder="Search Channel" />
 										</div>
-										<button class="btn btn-small" id="btn-ci-create-broadcast" >Create Live Broadcast</button>
-										<div id="ci-broadcast-visibility-container">
-											<span>Visibility: </span>
-											<select>
-												<option>Public</option>
-												<option>All Connections</option>
-											</select>
-										</div>
-										<div class="textbox-container" id="ci-broadcast-desc-container" >
-											<textarea class="textbox" id="ci-broadcast-desc" placeholder = "Broadcast Description" 
-											style="text-align: center; padding: 0.1% 1% ! important; width: 98% ! important;" ></textarea>
-										</div>
-										<div id="ci-il-header" ><span>Invitation List: </span></div>
-										<button class="btn btn-mini" id="btn-ci-select-all" >Select All</button>
-										<button class="btn btn-mini" id="btn-ci-deselect-all" >Deselect All</button>
-										<div id="ci-main-connections-container">
-											<div class="textbox-container" id="ci-search-connections-container" >
-												<input class="textbox" id="ci-search-connections" type="text" placeholder="Search Connections" />
+										<div class="search-icon-container"><i class="icon-search" ></i></div>
+									</div>
+									<button class="btn btn-mini" id="btn-ci-start-live-broadcast" rel="#ci-live-broadcast-container" ><icon class="icon-facetime-video" ></icon> Start Live Broadcast</button>
+									<button class="btn btn-mini" id="btn-ci-upload-video" rel="#ci-upload-video-container" ><icon class="icon-upload" ></icon> Upload Video</button>
+								</div>
+								<div class="content-sub-container" id="">
+									<!-- Start Live Broadcast Overlay -->
+									<div class="overlay-dialog-container" id="ci-start-live-broadcast-container">
+										<div class="overlay-dialog-container-header" ><span class="overlay-dialog-container-header-text" >Live Broadcast</span></div>
+										<div class="overlay-divider" style="top: 7%;" ></div>
+										<div style="position: absolute; width: 100%; height: 93%; top: 7%;" >
+											<div class="textbox-container" id="ci-broadcast-title-container" >
+												<input class="textbox" id="ci-broadcast-title" type="text" placeholder="Live Broadcast Title" />
 											</div>
-											<div id="ci-connections-container">
-												<!-- <div class="ci-connection">
-													<div class="ci-connection-image-container" ></div>
-													<div class="ci-connection-name" >Sagar Jadhav</div>
-													<button class="btn btn-mini btn-ci-connection-add btn-ci-connection-action" >Send Invitation</button>
-												</div> -->
-											</div>										
-										</div>								
+											<button class="btn btn-small" id="btn-ci-create-broadcast" >Create Live Broadcast</button>
+											<div id="ci-broadcast-visibility-container">
+												<span>Visibility: </span>
+												<select>
+													<option>Public</option>
+													<option>All Connections</option>
+												</select>
+											</div>
+											<div class="textbox-container" id="ci-broadcast-desc-container" >
+												<textarea class="textbox" id="ci-broadcast-desc" placeholder = "Broadcast Description" 
+												style="text-align: center; padding: 0.1% 1% ! important; width: 98% ! important;" ></textarea>
+											</div>
+											<div id="ci-il-header" ><span>Invitation List: </span></div>
+											<button class="btn btn-mini" id="btn-ci-select-all" >Select All</button>
+											<button class="btn btn-mini" id="btn-ci-deselect-all" >Deselect All</button>
+											<div id="ci-main-connections-container">
+												<div class="textbox-container" id="ci-search-connections-container" >
+													<input class="textbox" id="ci-search-connections" type="text" placeholder="Search Connections" />
+												</div>
+												<div id="ci-connections-container">
+													<!-- <div class="ci-connection">
+														<div class="ci-connection-image-container" ></div>
+														<div class="ci-connection-name" >Sagar Jadhav</div>
+														<button class="btn btn-mini btn-ci-connection-add btn-ci-connection-action" >Send Invitation</button>
+													</div> -->
+												</div>										
+											</div>								
+										</div>
 									</div>
-								</div>
 
-								<!-- Live Broadcast Overlay -->
-								<div id="ci-live-broadcast-container">
-									<div id="lb-comments-container">
-										<div id="lb-comments-header">Comments</div>
-										<div class="overlay-divider" style="top: 3.5%" ></div>
-										<div id="lb-comments"></div>
-									</div>
-									<div id="lb-main-broadcast-container">
-										<div id="lb-broadcast-container"></div>
-										<div id="lb-broadcast-options-container">
-											<div class="lb-start-broadcast" id="btn-lb-start-broadcast" ><i class="icon-play" ></i> Start the Broadcast</div>
-											<div id="btn-lb-capture" ><i class="icon-camera" ></i> Capture</div>
-											<div id="btn-lb-screencast" ><i class="icon-screenshot" ></i> Screencast</div>
-											<div id="btn-lb-switch-camera" ><i class="icon-refresh" ></i><i class="icon-camera" ></i> Switch Camera</div>
-											<div id="btn-lb-switch-screen" ><i class="icon-refresh" ></i><i class="icon-screenshot" ></i> Switch Screen</div>
+									<!-- Live Broadcast Overlay -->
+									<div id="ci-live-broadcast-container">
+										<div id="lb-comments-container">
+											<div id="lb-comments-header">Comments</div>
+											<div class="overlay-divider" style="top: 3.5%" ></div>
+											<div id="lb-comments"></div>
 										</div>
-										<div id="lb-broadcast-desc-container">
-											<div id="lb-broadcast-title" >Sample Live Broadcast</div>
-											<div id="lb-channel-name" >Sample Channel</div>
+										<div id="lb-main-broadcast-container">
+											<div id="lb-broadcast-container"></div>
+											<div id="lb-broadcast-options-container">
+												<div class="lb-start-broadcast" id="btn-lb-start-broadcast" ><i class="icon-play" ></i> Start the Broadcast</div>
+												<div id="btn-lb-capture" ><i class="icon-camera" ></i> Capture</div>
+												<div id="btn-lb-screencast" ><i class="icon-screenshot" ></i> Screencast</div>
+												<div id="btn-lb-switch-camera" ><i class="icon-refresh" ></i><i class="icon-camera" ></i> Switch Camera</div>
+												<div id="btn-lb-switch-screen" ><i class="icon-refresh" ></i><i class="icon-screenshot" ></i> Switch Screen</div>
+											</div>
+											<div id="lb-broadcast-desc-container">
+												<div id="lb-broadcast-title" >Sample Live Broadcast</div>
+												<div id="lb-channel-name" >Sample Channel</div>
+											</div>
 										</div>
 									</div>
-								</div>
-							</div>	
+								</div>	
+							</div>
+							
+							<div class="channel-content-sub-container" id="ci-comments-container" >
+							</div>
+
+							<div class="channel-content-sub-container" id="ci-desc-container" >
+							</div>
 						</div>
 					</div> 
 				</div>

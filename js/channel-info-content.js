@@ -181,6 +181,28 @@ $(document).ready(function(e){
 			}
 		})
 	});
+
+	// Click handler for ci-tab-header
+	$(".ci-tab-header").on("click", function(e){
+		var tabHeaderText = jQuery.trim($(this).text());
+		
+		$(".channel-content-sub-container-active").fadeOut("fast").removeClass("channel-content-sub-container-active");
+		$(".ci-tab-header-active").removeClass("ci-tab-header-active");
+		switch(tabHeaderText)
+		{
+			case "Videos": $("#ci-videos-container").fadeIn("fast").addClass("channel-content-sub-container-active");
+						   $("#ci-videos-tab").addClass("ci-tab-header-active");
+						   break;
+
+			case "Comments": $("#ci-comments-container").fadeIn("fast").addClass("channel-content-sub-container-active");
+							 $("#ci-comments-tab").addClass("ci-tab-header-active");
+						   	 break;
+
+			case "Description": $("#ci-desc-container").fadeIn("fast").addClass("channel-content-sub-container-active");
+								$("#ci-desc-tab").addClass("ci-tab-header-active");
+						   		break;
+		}
+	});
 });
 
 function initChannelInfo()

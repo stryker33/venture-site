@@ -22,6 +22,29 @@ $(document).ready(function(e){
 	*
 	*************************************************************************************************************/	
 
+	// Logo-container click handler
+	$("#logo-container").on("click", function(e){
+		$("#home-tab").click();
+		$("#main-menu-control-container").click();
+	});
+
+	// sub-menu-header click handler
+	$("#sub-menu-header").on("click", function(e){
+		var headerText = jQuery.trim($(this).text());
+
+		switch(headerText)
+		{
+			case "Profile": displayProfileContent();
+							break;
+
+			case "Connections": displayConnectionsContent();
+								break;
+
+			case "Channels": displayChannelsContent();
+							 break;
+		}
+	});
+
 	// Changes the color of navmenu-control-container icons on hover
 	$("#navmenu-control-container").hover(function(e){
 		$("#navmenu-control-container i").addClass("icon-white");
@@ -29,7 +52,7 @@ $(document).ready(function(e){
 		$("#navmenu-control-container i").removeClass("icon-white");
 	});
 
-	// Click handler fot navmenu-contorl-container
+	// Click handler for navmenu-control-container
 	$("#navmenu-control-container").on("click", function(e){
 		if($(this).hasClass("show-menu"))
 		{
@@ -40,6 +63,7 @@ $(document).ready(function(e){
 			animateNavBar("hide")
 		}
 	});
+
 	// Changes the appearance of the search-box on focus events
 	$("#search-box").focusin(function(e){
 		$("#search-box-container").css("background", "").css("border", "solid 1px #000000 !important");

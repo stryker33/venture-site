@@ -11,7 +11,7 @@ var nsConn; // NotificationServer Connection Object
 
 function webSocketServerConnect()
 {
-	//notificationServerConnect();
+	notificationServerConnect();
 }
 
 function notificationServerConnect()
@@ -35,6 +35,7 @@ function onNSOpen()
 	nsConn.subscribe(uid, function(topic, data){
 		var notification = jQuery.parseJSON(data);
 		
+		console.log(notification);
 		if(notification.notificationType == "connRequest")
 		{
 			$(buildConnectionRequestUser(notification.from)).appendTo("#connection-requests-content"); //connection-request-content.js

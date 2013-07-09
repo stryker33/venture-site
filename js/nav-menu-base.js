@@ -125,6 +125,9 @@ function displayMenu(subMenu)
 {
 	$("#main-menu").fadeOut("fast").removeClass("nav-menu-container-active").addClass("nav-menu-container");
 
+	$("#sub-menu-header").children("i").remove();
+	$("#sub-menu-header").text("");
+
 	switch(subMenu)
 	{
 		case "Main": $("#main-menu-control-container").click();
@@ -145,6 +148,7 @@ function displayMenu(subMenu)
 						 break;
 	}
 
+	$("#sub-menu-header").attr("title", "Jump back to " + subMenu);
 	animateMenu();
 	resizeImageContainers();
 }
