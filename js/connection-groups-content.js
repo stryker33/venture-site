@@ -397,8 +397,9 @@ function appendCG(connectionGroup, isNew, position)
 
 	var memberImage;
 	$.each(groupMembers, function(index, member){
-		memberImage = getUser(parseInt(member)).user.profile_image;
-		connectionGroup += "<div class='image-container cg-member-image' style='background-image: url(" + memberImage + ")'></div>";
+		member = getUser(parseInt(member)).user;
+		connectionGroup += "<div class='image-container cg-member-image' style='background-image: url(" + member.profile_image + ")' " +  
+							"title='" + member.first_name + " " + member.last_name + "' tip-gravity='ns' ></div>";
 	});
 
 	connectionGroup +=      "</div>" + 

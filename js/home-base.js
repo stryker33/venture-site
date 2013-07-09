@@ -103,16 +103,35 @@ $(document).ready(function(e){
 *************************************************************************************************************/
 function initLayouts()
 {	
+	//scaleToFit();
 	resizeImageContainers();
 	initHomeLayout();
 }
 
 function initHomeLayout()
 {
+	$(".wrapper").css({
+		"min-width": windowWidth * 0.9,
+		"min-height": windowHeight * 0.9
+	});
 	$("#banner-container").css("line-height", $("#banner-container").height() + "px");
 	$("#logo-container, #content-desc-header, #username").css("visibility", "visible");
 
 	setTimeout(animateNavBar, 1000, "show");
+}
+
+function scaleToFit()
+{
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) 
+	{
+  		var ww = ( $(window).width() < window.screen.width ) ? $(window).width() : window.screen.width;
+  		var mw = 1280;
+  		var ratio =  ww / mw;
+  		if( ww < mw)
+	   		$('#viewport').attr('content', 'initial-scale=' + ratio + '; maximum-scale=' + ratio + '; minimum-scale=' + ratio + '; user-scalable=yes, width=' + ww);
+	  	else
+	   		$('#viewport').attr('content', 'initial-scale=1.0; maximum-scale=2; minimum-scale=1.0; user-scalable=yes; width=' + ww);
+	}
 }
 
 function resizeImageContainers()

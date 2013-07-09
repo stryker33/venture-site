@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
+		<meta http-equiv="Content-Type" content="text/html" >
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
 		<title>Contineo</title>
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<meta id="viewport" name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=1280,height=768,target-densitydpi=device-dpi,user-scalable=yes" />
+		<!-- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" > -->
 
 		<script type="text/javascript" src="/assets/js/jquery-1.9.1.min.js" ></script>
 		<script type="text/javascript" src="/assets/js/jquery.ui.core.min.js" ></script>
@@ -52,7 +53,7 @@
 		<link href="/css/channel-info-content.css" rel="stylesheet" type="text/css" >
 	</head>
 
-	<body>
+	<body style="font-size: 100%" >
 		<input type="hidden" id="get-uid" value="<?php echo $_GET["uid"]; ?>" />
 		<input type="hidden" id="get-content" value="<?php echo $_GET["c"]; ?>" />
 		<div class="wrapper" >
