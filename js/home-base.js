@@ -110,10 +110,10 @@ function initLayouts()
 
 function initHomeLayout()
 {
-	$(".wrapper").css({
-		"min-width": windowWidth * 0.9,
-		"min-height": windowHeight * 0.9
-	});
+	//$(".wrapper").css({
+	//	"min-width": windowWidth * 0.9,
+	//	"min-height": windowHeight * 0.9
+	//});
 	$("#banner-container").css("line-height", $("#banner-container").height() + "px");
 	$("#logo-container, #content-desc-header, #username").css("visibility", "visible");
 
@@ -139,6 +139,11 @@ function resizeImageContainers()
 	$.each($(".image-container:visible").get(), function(index, imageContainer){
 		$(imageContainer).width($(imageContainer).height());
 	});
+}
+
+function populateUserImage()
+{
+	$(".user-profile-image").css("background-image", "url(" + userInfo.user.profile_image + ")");
 }
 
 function animateNavBar(displayCommand)

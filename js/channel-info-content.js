@@ -196,6 +196,7 @@ $(document).ready(function(e){
 
 			case "Comments": $("#ci-comments-container").fadeIn("fast").addClass("channel-content-sub-container-active");
 							 $("#ci-comments-tab").addClass("ci-tab-header-active");
+							 populateUserImage(); // home-base.js
 						   	 break;
 
 			case "Description": $("#ci-desc-container").fadeIn("fast").addClass("channel-content-sub-container-active");

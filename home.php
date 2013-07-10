@@ -600,6 +600,17 @@
 							</div>
 							
 							<div class="channel-content-sub-container" id="ci-comments-container" >
+								<div id="ci-post-comment-container" >
+									<div class="user-channel-comment-bubble image-container user-profile-image" >
+										<!-- <div class="image-container user-profile-image" ></div> -->
+									</div>
+									<div class="user-channel-comment textbox-container" >
+										<textarea class="comment-textbox" placeholder = "Post a Comment" ></textarea>
+									</div>
+								</div>
+								<div class="overlay-divider" ></div>
+								<div id="ci-comments" >
+								</div>
 							</div>
 
 							<div class="channel-content-sub-container" id="ci-desc-container" >

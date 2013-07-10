@@ -7,7 +7,6 @@
 	min-height: 768px;
 	top: 0%;
 	left: 0%;
-	//font-family: 'Ubuntu', sans-serif !important;
     font-family: 'Ubuntu', 'Ubuntu Beta', UbuntuBeta, Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif !important;
     font-size-adjust: none;
     font-stretch: normal;
@@ -115,4 +114,49 @@ i{margin-top: 0px !important; padding-right: 1.5px; vertical-align: middle !impo
     padding-right: 8%;
 }
 .dropdown-menu li:hover{cursor: pointer; background-color: #1E90FF; border-top: solid 0.1px #000000; border-bottom: solid 0.1px #000000;}
-.overlay-divider{position: absolute; width: 97%; height: 0px; left: 1.5%; border: solid 0.1px #000000; }
+.overlay-divider{position: relative; width: 97%; height: 0px; left: 1.5%; border: solid 0.1px #000000; }
+
+.user-channel-comment-bubble
+{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: 10%;
+    margin-top: 5px;
+    border: solid 1px #000000;
+}
+
+.user-channel-comment-bubble .image-container
+{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 5px;
+    left: 5px;
+}
+.user-channel-comment
+{
+    position: absolute;
+    width: 70%;
+    height: auto;
+    min-height: 80px;
+    left: 15%;
+    margin-top: 5px;
+    border: solid 1px #000000;
+}
+.user-channel-comment textarea
+{
+    position: absolute;
+    width: 99.3%;
+    height: 90%;
+    line-height: 15px !important;
+    font-family: inherit;
+    font-size: 11px; 
+    font-weight: 500; 
+    padding: 3px; 
+    border: 0px;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    resize: none;
+}

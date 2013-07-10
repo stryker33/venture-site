@@ -379,3 +379,21 @@
 
 #lb-broadcast-title{top: 10%; font-size: 15.5px; font-weight: 700;}
 #lb-channel-name{top: 21%; font-size: 11px;}
+
+#ci-post-comment-container
+{
+	position: relative;
+	width: 100%;
+	height: 95px;
+	padding: 5px 5px;
+}
+
+#ci-comments
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 30%;
+	padding: 5px 5px;
+}
+
