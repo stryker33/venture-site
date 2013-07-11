@@ -11,6 +11,7 @@ $(document).ready(function(e){
 
 	$(".content-container").niceScroll();
 	$(".ci-tab-content-container").niceScroll();
+	$(".channel-content-sub-container").niceScroll();
 	$("#search-box").val("");
 
 	initLayouts();
@@ -143,7 +144,12 @@ function resizeImageContainers()
 
 function populateUserImage()
 {
-	$(".user-profile-image").css("background-image", "url(" + userInfo.user.profile_image + ")");
+	var profileImages = $(".user-profile-image").get()
+	$(".user-profile-image").filter(function(){
+		return $(this).css("background-image") == "none";
+	}).css("background-image", "url(" + userInfo.user.profile_image + ")")
+	.attr("title", userInfo.user.first_name + " " + userInfo.user.last_name)
+	.attr("tip-gravity", "ns");
 }
 
 function animateNavBar(displayCommand)

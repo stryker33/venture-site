@@ -196,7 +196,7 @@ $(document).ready(function(e){
 
 			case "Comments": $("#ci-comments-container").fadeIn("fast").addClass("channel-content-sub-container-active");
 							 $("#ci-comments-tab").addClass("ci-tab-header-active");
-							 populateUserImage(); // home-base.js
+							 populateComments(); // home-base.js
 						   	 break;
 
 			case "Description": $("#ci-desc-container").fadeIn("fast").addClass("channel-content-sub-container-active");
@@ -221,8 +221,14 @@ $(document).ready(function(e){
 				if(data == "comment posted")
 				{
 					$("#btn-ci-post-comment").addClass("btn-success").text("Comment Posted");
+
+					var comment = {};
+					comment["commentor_name"] = userInfo.user.first_name + " " + userInfo.user.last_name;
+					comment["comment"] = $(".user-channel-comment textarea").val();
+					addChannelComment(comment, true);
+					populateUserImage();
+
 					setTimeout(function(){
-						addChannelComment();
 						$("#btn-ci-post-comment").removeClass("btn-success").text("Post Comment");
 					}, 1000);
 
@@ -314,7 +320,49 @@ function initCBLiveBrodcastLayout()
 	})
 }
 
-function addChannelComment()
+function populateComments()
 {
+	populateUserImage();
 
+	var channel_id = $("#channel-info-content").attr("channel_id");
+	$.ajaxq("channelInfoQueue", {
+		url: "/php/getChannelComments.php",
+		type: "GET",
+		data: {ch_id: channel_id},
+		success: function(data){
+			var channelComments = jQuery.parseJSON(data);
+			$.each(channelComments, function(index, comment){
+				if(comment.commentor_id == uid)
+					addChannelComment(comment, true);
+				else
+					addChannelComment(comment, false);
+			});
+			populateUserImage();
+		}
+	});
+}
+
+function addChannelComment(comment, isUserComment)
+{
+	if(isUserComment == true)
+	{
+		var commentContainer = "<div class='ci-comment' >" + 
+									"<div class='ci-channel-comment-bubble image-container user-profile-image' ></div>" + 
+									"<div class='ci-channel-comment-name-container' >" + comment.commentor_name + "</div>" + 
+									"<div class='ci-channel-comment' >" + comment.comment + "</div>" + 
+									"<div class='overlay-divider' style='position: absolute; bottom: 0px' ></div>" + 
+							   "</div>";
+	}
+	else
+	{
+		var commentContainer = "<div class='ci-comment' >" + 
+									"<div class='ci-channel-comment-bubble image-container' style='background-image: url(" + comment.commentor_pi + ")'></div>" + 
+									"<div class='ci-channel-comment-name-container' >" + comment.commentor_name + "</div>" + 
+									"<div class='ci-channel-comment' >" + comment.comment + "</div>" + 
+									"<div class='overlay-divider' style='position: absolute; bottom: 0px' ></div>" + 
+							   "</div>";
+
+	}
+	
+	$(commentContainer).appendTo($("#ci-comments")).fadeIn("fast");
 }

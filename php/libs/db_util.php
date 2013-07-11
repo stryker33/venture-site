@@ -307,4 +307,49 @@
 
 		return $userChannels;
 	}
+
+	// Returns the comments corresponding to a specific channel
+	function getChannelComments($channel_id)
+	{
+		$memcached = initMemcached();
+
+		$cache_result = $memcached->get(md5("channels-comments-".$channel_id));
+		if($cache_result)
+			return $cache_result;
+		else
+		{
+			$channelComments = updateChannelComments($channel_id);
+			return $channelComments;		
+		}
+	}
+
+	// Updates the channel-comments-channel_id key stored in memcached
+	function updateChannelComments($channel_id)
+	{
+		$conn = connect("127.0.0.1", "5000", "root", "");
+		$memcached = initMemcached();
+		
+		$channelComments = array();
+		$channelCommentsCount = 0;
+		// Query connections table
+		$query = "Select commentor_id, comment, comment_ts from channel_comments where channel_id='$channel_id'";
+		$result = mysqli_query($conn, $query) or die("Query Execution failed: ".mysqli_error($conn));
+		while($channelComment = mysqli_fetch_array($result, MYSQL_ASSOC))
+		{
+			$commentor = getUserInfo($channelComment["commentor_id"]);
+
+			$channeComments[$channelCommentsCount] = array();
+			$channelComments[$channelCommentsCount]["commentor_id"] = $commentor["user"]["uid"];
+			$channelComments[$channelCommentsCount]["commentor_pi"] = $commentor["user"]["profile_image"];
+			$channelComments[$channelCommentsCount]["commentor_name"] = $commentor["user"]["first_name"]." ".$commentor["user"]["last_name"];
+			$channelComments[$channelCommentsCount]["comment"] = $channelComment["comment"];
+			$channelComments[$channelCommentsCount++]["comment_ts"] = $channelComment["comment_ts"];
+		}
+
+		$memcached->set(md5("channel-comments-".$channel_id), $channelComments);
+		mysqli_close($conn);
+
+		return $channelComments;
+	}
+
 ?>

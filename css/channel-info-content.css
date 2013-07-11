@@ -16,7 +16,6 @@
 	top: 25%;
 	left: 0%;
 	border-bottom: solid 1px #000000;
-	overflow: auto;
 }
 
 #ci-channel-cover-container
@@ -400,16 +399,19 @@
 #btn-ci-post-comment
 {
 	position: absolute;
-	left: 86%;
-	bottom: 16%;
+	right: 86%;
+	bottom: 15%;
 }
 
 .ci-comment
 {
 	position: relative;
-	width: 85%;
+	width: 70%;
 	height: auto;
 	min-height: 55px;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 15px;
 	margin: 0 auto;
 	padding: 5px 5px;
 }
@@ -419,7 +421,14 @@
 	position: absolute;
 	width: 45px;
 	height: 45px;
-	right: 10px;
+	left: 10px;
+}
+
+.ci-channel-comment-name-container
+{
+	position: absolute;
+	left: 70px;
+	font-weight: 700;
 }
 
 .ci-channel-comment
@@ -428,8 +437,6 @@
 	width: auto;
 	height: auto;
 	min-height: 10px;
-	left: 10%;
-	line-height: 15px;
-	font-size: 11px;
-	font-weight: 500;
+	top: 18px;
+	left: 70px;
 }

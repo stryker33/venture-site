@@ -613,8 +613,9 @@
 								<div id="ci-comments" >
 									<div class="ci-comment" >
 										<div class="ci-channel-comment-bubble image-container user-profile-image" ></div>
+										<div class="ci-channel-comment-name-container">Fernando Alonso</div>
 										<div class="ci-channel-comment" >Your videos are awsome...</div>
-									</div>
+										<div class="overlay-divider" style="position: absolute; bottom: 0px" ></div>
 									</div>
 								</div>
 							</div>
