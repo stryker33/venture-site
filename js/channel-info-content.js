@@ -204,6 +204,32 @@ $(document).ready(function(e){
 						   		break;
 		}
 	});
+
+	$("#btn-ci-post-comment").on("click", function(e){
+		comment = {};
+		comment["c_id"] = uid;
+		comment["ch_id"] = $("#channel-info-content").attr("channel_id");
+		comment["c"] = $(".user-channel-comment .comment-textbox").val();
+		$.ajaxq("channelInfoQueue", {
+			url: "/php/postChannelComment.php",
+			type: "POST",
+			data: {comment: comment},
+			beforeSend: function(jqXHR, settings){
+				$("#btn-ci-post-comment").text("Loading...");
+			},
+			success: function(data){
+				if(data == "comment posted")
+				{
+					$("#btn-ci-post-comment").addClass("btn-success").text("Comment Posted");
+					setTimeout(function(){
+						addChannelComment();
+						$("#btn-ci-post-comment").removeClass("btn-success").text("Post Comment");
+					}, 1000);
+
+				}
+			}
+		})
+	});
 });
 
 function initChannelInfo()
@@ -221,6 +247,7 @@ function populateChannelInfo(channelName)
 			channelSelected = channel;
 	});
 
+	$("#channel-info-content").attr("channel_id", channelSelected.channel_id);
 	$("#ci-channel-name-container").text(channelSelected.channel_name);
 	$("#ci-channel-visibility-container").text(channelSelected.channel_visibility);
 	$("#ci-channel-desc-container").text(channelSelected.channel_desc);
@@ -287,3 +314,7 @@ function initCBLiveBrodcastLayout()
 	})
 }
 
+function addChannelComment()
+{
+
+}

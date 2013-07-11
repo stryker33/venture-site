@@ -607,9 +607,15 @@
 									<div class="user-channel-comment textbox-container" >
 										<textarea class="comment-textbox" placeholder = "Post a Comment" ></textarea>
 									</div>
+									<button class="btn btn-mini" id="btn-ci-post-comment">Post Comment</button>
 								</div>
 								<div class="overlay-divider" ></div>
 								<div id="ci-comments" >
+									<div class="ci-comment" >
+										<div class="ci-channel-comment-bubble image-container user-profile-image" ></div>
+										<div class="ci-channel-comment" >Your videos are awsome...</div>
+									</div>
+									</div>
 								</div>
 							</div>
 

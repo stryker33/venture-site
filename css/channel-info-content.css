@@ -397,3 +397,39 @@
 	padding: 5px 5px;
 }
 
+#btn-ci-post-comment
+{
+	position: absolute;
+	left: 86%;
+	bottom: 16%;
+}
+
+.ci-comment
+{
+	position: relative;
+	width: 85%;
+	height: auto;
+	min-height: 55px;
+	margin: 0 auto;
+	padding: 5px 5px;
+}
+
+.ci-channel-comment-bubble
+{
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	right: 10px;
+}
+
+.ci-channel-comment
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	min-height: 10px;
+	left: 10%;
+	line-height: 15px;
+	font-size: 11px;
+	font-weight: 500;
+}

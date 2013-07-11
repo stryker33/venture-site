@@ -297,7 +297,7 @@
 		$userChannels = array();
 
 		// Query connections table
-		$query = "Select channel_name, channel_visibility, channel_desc from channels where channel_owner_uid=$uid";
+		$query = "Select channel_id, channel_name, channel_visibility, channel_desc from channels where channel_owner_uid=$uid";
 		$result = mysqli_query($conn, $query) or die("Query Execution failed: ".mysqli_error($conn));
 		while($channel = mysqli_fetch_array($result, MYSQL_ASSOC))
 			$userChannels[] = $channel;
