@@ -1,3 +1,4 @@
+var channelSelected;
 $(document).ready(function(e){
 	initCILayout();
 
@@ -52,7 +53,7 @@ $(document).ready(function(e){
 			$("#channel-info-container").show();
 			$("#ci-channel-header").hide();	
 		}
-	})
+	});
 
 	// Click handler for btn-ci-select-all and btn-ci-deselect-all
 	$(document).on("click", "#btn-ci-select-all, #btn-ci-deselect-all",function(e){
@@ -184,6 +185,9 @@ $(document).ready(function(e){
 
 	// Click handler for ci-tab-header
 	$(".ci-tab-header").on("click", function(e){
+		if($("#ci-comments-container").hasClass("channel-content-sub-container-active"))
+			unsubscribeToChannelComments(channelSelected.channel_id);
+
 		var tabHeaderText = jQuery.trim($(this).text());
 		
 		$(".channel-content-sub-container-active").fadeOut("fast").removeClass("channel-content-sub-container-active");
@@ -196,7 +200,8 @@ $(document).ready(function(e){
 
 			case "Comments": $("#ci-comments-container").fadeIn("fast").addClass("channel-content-sub-container-active");
 							 $("#ci-comments-tab").addClass("ci-tab-header-active");
-							 populateComments(); // home-base.js
+							 populateComments();
+							 subscribeToChannelComments(channelSelected.channel_id);
 						   	 break;
 
 			case "Description": $("#ci-desc-container").fadeIn("fast").addClass("channel-content-sub-container-active");
@@ -205,6 +210,7 @@ $(document).ready(function(e){
 		}
 	});
 
+	// Click handler for btn-ci-post-comment
 	$("#btn-ci-post-comment").on("click", function(e){
 		comment = {};
 		comment["c_id"] = uid;
@@ -225,8 +231,8 @@ $(document).ready(function(e){
 					var comment = {};
 					comment["commentor_name"] = userInfo.user.first_name + " " + userInfo.user.last_name;
 					comment["comment"] = $(".user-channel-comment textarea").val();
-					addChannelComment(comment, true);
-					populateUserImage();
+					addChannelComment(comment, true, true);
+					populateUserImage(userInfo);
 
 					setTimeout(function(){
 						$("#btn-ci-post-comment").removeClass("btn-success").text("Post Comment");
@@ -247,7 +253,7 @@ function initChannelInfo()
 
 function populateChannelInfo(channelName)
 {
-	var channelSelected;
+	channelSelected;
 	$.each(channels, function(index, channel){
 		if(channel.channel_name == channelName)
 			channelSelected = channel;
@@ -261,6 +267,7 @@ function populateChannelInfo(channelName)
 
 	displayContent("Channel Info");
 	initChannelInfo();
+	channelCommentServerConnect();
 }
 
 function populateBroadcastContainer(context)
@@ -322,7 +329,11 @@ function initCBLiveBrodcastLayout()
 
 function populateComments()
 {
-	populateUserImage();
+	populateUserImage(userInfo);
+
+	$.each($(".ci-comment").get(), function(index, value){
+		$(comment).remove();
+	});
 
 	var channel_id = $("#channel-info-content").attr("channel_id");
 	$.ajaxq("channelInfoQueue", {
@@ -333,16 +344,16 @@ function populateComments()
 			var channelComments = jQuery.parseJSON(data);
 			$.each(channelComments, function(index, comment){
 				if(comment.commentor_id == uid)
-					addChannelComment(comment, true);
+					addChannelComment(comment, true, false);
 				else
-					addChannelComment(comment, false);
+					addChannelComment(comment, false, false);
 			});
-			populateUserImage();
+			populateUserImage(userInfo);
 		}
 	});
 }
 
-function addChannelComment(comment, isUserComment)
+function addChannelComment(comment, isUserComment, isNewComment)
 {
 	if(isUserComment == true)
 	{
@@ -364,5 +375,22 @@ function addChannelComment(comment, isUserComment)
 
 	}
 	
-	$(commentContainer).appendTo($("#ci-comments")).fadeIn("fast");
+	if(isNewComment == true)
+	{
+		var appendedElement = $(commentContainer).prependTo($("#ci-comments"));
+		$(appendedElement).fadeIn("fast").css("background-color", "#E8F4FF").animate({"background-color": "#FFFFFF"}, 3000);
+	}
+	else
+	{
+		$(commentContainer).appendTo($("#ci-comments")).fadeIn("fast");
+	}
+}
+
+function channelCommentHandler(topic, data)
+{
+	var channelComment = jQuery.parseJSON(data);
+	console.log(channelComment);
+	
+	if(channelComment.commentor_id != uid)
+		addChannelComment(channelComment, false, true);
 }

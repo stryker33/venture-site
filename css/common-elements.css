@@ -49,6 +49,7 @@ select{font-size: 11px; font-weight: 500; text-align: center;}
 .separator{position: absolute; width: 96%; left: 2%;}
 a:hover{cursor: pointer;}
 i{margin-top: 0px !important; padding-right: 1.5px; vertical-align: middle !important;}
+
 .image-container
 {
     border: solid 1px #000000;
@@ -163,4 +164,12 @@ i{margin-top: 0px !important; padding-right: 1.5px; vertical-align: middle !impo
     -moz-border-radius: 5px; 
     -webkit-border-radius: 5px; 
     resize: none;
+}
+
+.wordwrap { 
+   white-space: pre-wrap;
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;
+   white-space: -o-pre-wrap;
+   word-wrap: break-word;
 }

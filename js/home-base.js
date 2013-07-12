@@ -46,25 +46,6 @@ $(document).ready(function(e){
 		}
 	});
 
-	// Changes the color of navmenu-control-container icons on hover
-	$("#navmenu-control-container").hover(function(e){
-		$("#navmenu-control-container i").addClass("icon-white");
-	}, function(e){
-		$("#navmenu-control-container i").removeClass("icon-white");
-	});
-
-	// Click handler for navmenu-control-container
-	$("#navmenu-control-container").on("click", function(e){
-		if($(this).hasClass("show-menu"))
-		{
-			animateNavBar("show");
-		}
-		else if($(this).hasClass("affix-menu"))
-		{
-			animateNavBar("hide")
-		}
-	});
-
 	// Changes the appearance of the search-box on focus events
 	$("#search-box").focusin(function(e){
 		$("#search-box-container").css("background", "").css("border", "solid 1px #000000 !important");
@@ -135,51 +116,6 @@ function scaleToFit()
 	}
 }
 
-function resizeImageContainers()
-{
-	$.each($(".image-container:visible").get(), function(index, imageContainer){
-		$(imageContainer).width($(imageContainer).height());
-	});
-}
-
-function populateUserImage()
-{
-	var profileImages = $(".user-profile-image").get()
-	$(".user-profile-image").filter(function(){
-		return $(this).css("background-image") == "none";
-	}).css("background-image", "url(" + userInfo.user.profile_image + ")")
-	.attr("title", userInfo.user.first_name + " " + userInfo.user.last_name)
-	.attr("tip-gravity", "ns");
-}
-
-function animateNavBar(displayCommand)
-{
-	if(displayCommand == "show")
-	{
-		$("#content-container-wrapper").animate({width: "85%"}, 300);
-		$("#navbar-container").animate({
-			left: "85%"
-		}, 300, function(e){
-			$("#navmenu-control-container").removeClass("show-menu").addClass("affix-menu");
-			$("#navmenu-control-container i").remove();
-			$("#navmenu-control-container").hide().append("<i class='icon-list' ></i><i class='icon-chevron-right' ></i>").attr("title", "Hide the navigation menu");
-			$("#navmenu-control-container").fadeIn("fast");
-		});	
-	}
-	else if(displayCommand == "hide")
-	{
-		$("#content-container-wrapper").animate({width: "100%"}, 300);
-		$("#navbar-container").animate({
-			left: "100%"
-		}, 300, function(e){
-			$("#navmenu-control-container").removeClass("affix-menu").addClass("show-menu");
-			$("#navmenu-control-container i").remove();
-			$("#navmenu-control-container").hide().append("<i class='icon-chevron-left' ></i><i class='icon-list' ></i>").attr("title", "Show the navigation menu");
-			$("#navmenu-control-container").fadeIn("fast");
-		});	
-	}
-	
-}
 function populatePage()
 {
 	console.log(uid);

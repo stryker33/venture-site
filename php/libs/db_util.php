@@ -332,7 +332,7 @@
 		$channelComments = array();
 		$channelCommentsCount = 0;
 		// Query connections table
-		$query = "Select commentor_id, comment, comment_ts from channel_comments where channel_id='$channel_id'";
+		$query = "Select commentor_id, comment, comment_ts from channel_comments where channel_id='$channel_id' order by comment_ts desc";
 		$result = mysqli_query($conn, $query) or die("Query Execution failed: ".mysqli_error($conn));
 		while($channelComment = mysqli_fetch_array($result, MYSQL_ASSOC))
 		{
@@ -350,6 +350,46 @@
 		mysqli_close($conn);
 
 		return $channelComments;
+	}
+
+	// Returns the channel-info
+	function getChannelInfo($channel_id)
+	{
+		$memcached = initMemcached();
+
+		$cache_result = $memcached->get(md5("channel-info-".$channel_id));
+		if($cache_result)
+			return $cache_result;
+		else
+		{
+			$channelInfo = updateChannelInfo($channel_id);
+			return $channelInfo;		
+		}
+	}
+
+	// Updates the channel-info key in memcached
+	function updateChannelInfo($channel_id)
+	{
+		$conn = connect("127.0.0.1", "5000", "root", "");
+		$memcached = initMemcached();
+		
+		$channelInfo = array();
+		$channelCommentsCount = 0;
+
+		$query = "Select channel_owner_uid, channel_name, channel_desc from channels where channel_id='$channel_id'";
+		$result = mysqli_query($conn, $query) or die("Query Execution failed: ".mysqli_error($conn));
+		$channel = mysqli_fetch_array($result, MYSQL_ASSOC);
+
+		$channelOwner = getUserInfo($channel["channel_owner_uid"]);
+		$channelInfo["channel_owner_name"] = $channelOwner["user"]["first_name"]." ".$channelOwner["user"]["last_name"];
+		$channelInfo["channel_owner_uid"] = $channel["channel_owner_uid"];
+		$channelInfo["channel_name"] = $channel["channel_name"];
+		$channelInfo["channel_desc"] = $channel["channel_desc"];
+
+		$memcached->set(md5("channel-info-".$channel_id), $channelInfo);
+		mysqli_close($conn);
+
+		return $channelInfo;
 	}
 
 ?>

@@ -15,7 +15,6 @@
 	height: 75%;
 	top: 25%;
 	left: 0%;
-	border-bottom: solid 1px #000000;
 }
 
 #ci-channel-cover-container
@@ -107,6 +106,7 @@
 	width: 100%;
 	height: 97%;
 	display: none;
+	outline: 0 none;
 }
 
 #ci-tab-header-container
@@ -124,7 +124,7 @@
 	float: right;
 	font-size: 11px;
 	font-weight: 700;
-	padding: 0px 0.8%;
+	padding: 0px 25px;
 }
 
 .ci-tab-header-active{border-bottom: solid 3px #1E90FF; }
@@ -384,7 +384,7 @@
 	position: relative;
 	width: 100%;
 	height: 95px;
-	padding: 5px 5px;
+	padding: 5px 0px;
 }
 
 #ci-comments
@@ -393,7 +393,7 @@
 	width: 100%;
 	height: auto;
 	min-height: 30%;
-	padding: 5px 5px;
+	padding: 5px 0px;
 }
 
 #btn-ci-post-comment

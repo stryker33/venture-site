@@ -1,0 +1,159 @@
+#channel-info-container
+{
+	position: absolute;
+	width: 100%;
+	height: 25%;
+	top: 0%;
+	left: 0%;
+	border-bottom: solid 1px #000000;
+}
+
+#channel-content-container
+{
+	position: absolute;
+	width: 100%;
+	height: 75%;
+	top: 25%;
+	left: 0%;
+}
+
+#c-channel-cover-container
+{
+	position: absolute;
+	width: 15%;
+	height: 90%;
+	top: 5%;
+	right: 5%;
+}
+
+#c-channel-name-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 25%;
+	right: 21.5%;
+	font-size: 14px;
+	font-weight: 700;
+	text-align: right;
+}
+
+#c-channel-owner-container
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	top: 35.5%;
+	right: 21.5%;
+	font-size: 11px;
+	font-weight: 500;
+	text-align: right;
+}
+
+#c-channel-header
+{
+	position: absolute;
+	width: 100%;
+	height: 4%;
+	bottom: 75%;
+	left: 0%;
+	font-size: 12.5px;
+	font-weight: 700;
+	border-bottom: solid 1px #000000;
+	display: none;
+}
+
+#c-channel-header span{position: absolute; right: 3%;}
+#c-channel-header i{position: absolute; right: 1.5%; top: 25%;}
+
+.channel-content-sub-container
+{
+	position: relative;
+	width: 100%;
+	height: 97%;
+	display: none;
+	outline: 0 none;
+}
+
+#c-tab-header-container
+{
+	position: relative;
+	width: 100%;
+	height: 3%;
+}
+
+.c-tab-header
+{
+	position: relative;
+	width: auto;
+	height: 100%;
+	float: right;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 0px 25px;
+}
+
+.c-tab-header-active{border-bottom: solid 3px #1E90FF; }
+.c-tab-header:hover{cursor: pointer; }
+
+#c-post-comment-container
+{
+	position: relative;
+	width: 100%;
+	height: 95px;
+	padding: 5px 0px;
+}
+
+#c-comments
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 30%;
+	padding: 5px 0px;
+}
+
+#btn-c-post-comment
+{
+	position: absolute;
+	right: 86%;
+	bottom: 15%;
+}
+
+.c-comment
+{
+	position: relative;
+	width: 70%;
+	height: auto;
+	min-height: 55px;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 15px;
+	margin: 0 auto;
+	padding: 5px 5px;
+}
+
+.c-channel-comment-bubble
+{
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	left: 10px;
+}
+
+.c-channel-comment-name-container
+{
+	position: absolute;
+	left: 70px;
+	font-weight: 700;
+}
+
+.c-channel-comment
+{
+	position: absolute;
+	width: auto;
+	height: auto;
+	min-height: 10px;
+	top: 18px;
+	left: 70px;
+}

@@ -41,7 +41,8 @@
 		<script type="text/javascript" src="/js/connection-groups-content.js" ></script>
 		<script type="text/javascript" src="/js/channels-content.js" ></script>
 		<script type="text/javascript" src="/js/channel-info-content.js" ></script>
-		<script src="/js/ws-message-handler.js" type="text/javascript" ></script>
+		<script type="text/javascript" src="/js/ws-message-handler.js" ></script>
+		<script type="text/javascript" src="/js/ws-channel-comment-handler.js" ></script>
 		<link href="/css/home-base.css" rel="stylesheet" type="text/css" >
 		<link href="/css/home-content.css" rel="stylesheet" type="text/css" >
 		<link href="/css/edit-profile-content.css" rel="stylesheet" type="text/css" >
@@ -611,12 +612,12 @@
 								</div>
 								<div class="overlay-divider" ></div>
 								<div id="ci-comments" >
-									<div class="ci-comment" >
+									<!-- <div class="ci-comment" >
 										<div class="ci-channel-comment-bubble image-container user-profile-image" ></div>
 										<div class="ci-channel-comment-name-container">Fernando Alonso</div>
 										<div class="ci-channel-comment" >Your videos are awsome...</div>
 										<div class="overlay-divider" style="position: absolute; bottom: 0px" ></div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 

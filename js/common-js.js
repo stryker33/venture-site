@@ -132,3 +132,48 @@ function initDurationDatepicker(fromSelector, toSelector)
 		}
 	});
 }
+
+function resizeImageContainers()
+{
+	$.each($(".image-container:visible").get(), function(index, imageContainer){
+		$(imageContainer).width($(imageContainer).height());
+	});
+}
+
+function populateUserImage(user)
+{
+	var profileImages = $(".user-profile-image").get()
+	$(".user-profile-image").filter(function(){
+		return $(this).css("background-image") == "none";
+	}).css("background-image", "url(" + user.user.profile_image + ")")
+	.attr("title", user.user.first_name + " " + user.user.last_name)
+	.attr("tip-gravity", "ns");
+}
+
+function animateNavBar(displayCommand)
+{
+	if(displayCommand == "show")
+	{
+		$("#content-container-wrapper").animate({width: "85%"}, 300);
+		$("#navbar-container").animate({
+			left: "85%"
+		}, 300, function(e){
+			$("#navmenu-control-container").removeClass("show-menu").addClass("affix-menu");
+			$("#navmenu-control-container i").remove();
+			$("#navmenu-control-container").hide().append("<i class='icon-list' ></i><i class='icon-chevron-right' ></i>").attr("title", "Hide the navigation menu");
+			$("#navmenu-control-container").fadeIn("fast");
+		});
+	}
+	else if(displayCommand == "hide")
+	{
+		$("#content-container-wrapper").animate({width: "100%"}, 300);
+		$("#navbar-container").animate({
+			left: "100%"
+		}, 300, function(e){
+			$("#navmenu-control-container").removeClass("affix-menu").addClass("show-menu");
+			$("#navmenu-control-container i").remove();
+			$("#navmenu-control-container").hide().append("<i class='icon-chevron-left' ></i><i class='icon-list' ></i>").attr("title", "Show the navigation menu");
+			$("#navmenu-control-container").fadeIn("fast");
+		});
+	}
+}

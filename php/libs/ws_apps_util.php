@@ -14,4 +14,12 @@
 		$socket->connect("tcp://localhost:5555");
 		$socket->send(json_encode($connRequest));
 	}
+
+	function sendChannelCommentNotification($channelComment)
+	{
+		$context = new ZMQContext();
+		$socket = $context->getSocket(ZMQ::SOCKET_PUSH, "connRequest");
+		$socket->connect("tcp://localhost:5556");
+		$socket->send(json_encode($channelComment));
+	}	
 ?>
