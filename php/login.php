@@ -11,7 +11,7 @@
 	$emailid = $_POST["emailid"];
 	$password = $_POST["password"];
 	
-	$query = "Select uid, first_name, last_name, password, gender, current_home, hometown from user where emailid='$emailid'";
+	$query = "Select uid, first_name, last_name, password, gender, dob, current_home, hometown from user where emailid='$emailid'";
 	echo $query;
 	
 	$result = mysqli_query($conn, $query) or die("Query Execution failed : ".mysqli_error());
@@ -24,7 +24,7 @@
 	}
 	else 
 	{
-		$passwordHash = generateHash($password, $emailid, $row["fisrt_name"]." ".$row["dob"]);
+		$passwordHash = generateHash($password, $emailid, $row["first_name"]." ".$row["dob"]);
 		if($passwordHash != $row["password"])
 		{
 			header("Location: https://localhost/index.php?action=login&r=invalidPassword&emailid=$emailid");
