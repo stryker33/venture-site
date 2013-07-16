@@ -32,9 +32,8 @@
 		}
 		else
 		{
-			//unset($row["password"]);
-			//$key = md5("Select first_name, last_name, gender, current_home, hometown from user where uid=".$row["uid"]);
-			//$memcached->set($key, $row, 600);
+			session_start();
+			$_SESSION[session_id()] = $row["uid"];
 			header("Location: https://localhost/home.php?uid=".$row["uid"]);
 		}
 	}

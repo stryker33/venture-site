@@ -331,7 +331,7 @@ function populateComments()
 {
 	populateUserImage(userInfo);
 
-	$.each($(".ci-comment").get(), function(index, value){
+	$.each($(".ci-comment").get(), function(index, comment){
 		$(comment).remove();
 	});
 

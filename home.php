@@ -55,6 +55,12 @@
 	</head>
 
 	<body style="font-size: 100%" >
+		<?php
+			session_start();
+			// Uncomment to enable session management
+			//if(!isset($_SESSION[session_id()]))
+			//	header("Location: https://localhost");
+		?>
 		<input type="hidden" id="get-uid" value="<?php echo $_GET["uid"]; ?>" />
 		<input type="hidden" id="get-content" value="<?php echo $_GET["c"]; ?>" />
 		<div class="wrapper" >
